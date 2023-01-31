@@ -1,7 +1,7 @@
 export const ApplicationViews = () => {
 	return <>
-		<h1 className="title--main">Honey Rae Repairs</h1>
-		<div>Your one-stop shop for repairing your tech</div>
+		<h1 className="title--main">TrackIT Application</h1>
+		<div>Your journey of 2000 miles begins with the first step.</div>
 	</>
 }
 

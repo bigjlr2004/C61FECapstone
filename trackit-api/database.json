@@ -1,0 +1,54 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "Roberts",
+      "email": "john@john.com"
+    },
+    {
+      "email": "jerbear@jerbear.com",
+      "firstName": "Jeremy",
+      "lastName": "Goodman",
+      "id": 2
+    }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "name": "Quit Smoking",
+      "categoryId": 2,
+      "itemCommentId": 1,
+      "userId": 1,
+      "dateAdded": "05/17/2021",
+      "status": "false"
+    }
+  ],
+  "itemComments": [
+    {
+      "id": 1,
+      "commentId": 1
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "commentText": "I quit smoking.",
+      "dateAdded": "05/18/2021"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Start"
+    },
+    {
+      "id": 2,
+      "name": "Stop"
+    },
+    {
+      "id": 3,
+      "name": "Continue"
+    }
+  ]
+}
