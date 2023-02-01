@@ -1,5 +1,8 @@
 import { Outlet, Route, Routes } from "react-router-dom"
 import { CreateItem } from "../Item/CreateItem"
+import { DisplayItems } from "../Item/DisplayItems"
+import { ItemContainer } from "../Item/ItemContainer"
+import { EditUser } from "../UserInfo/EditUser"
 
 export const ApplicationViews = () => {
 	return <>
@@ -13,6 +16,8 @@ export const ApplicationViews = () => {
 				</>
 			}>
 				<Route path="new_item" element={<CreateItem />} />
+				<Route path="user_history" element={<ItemContainer />} />
+				<Route path="user_information" element={<EditUser />} />
 			</Route>
 		</Routes>
 

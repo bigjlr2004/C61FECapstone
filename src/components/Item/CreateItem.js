@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom";
 import { elephantPost, standardFetch } from "../../Api_Manager";
 import { Categories } from "../Categories/Categories";
 
@@ -6,6 +7,7 @@ export const CreateItem = () => {
 
     const localTrackITUser = localStorage.getItem("trackIT_user")
     const trackITObject = JSON.parse(localTrackITUser);
+    const navigate = useNavigate()
     const [newItem, setNewItem] = useState({
         name: "",
         categoryId: "",
@@ -14,16 +16,22 @@ export const CreateItem = () => {
         dateAdded: new Date(),
         status: true
     })
-    const [newItemComment, setNewItemComment] = useState({
-        itemId: "",
-        userId: trackITObject.id
 
-    })
     const [newComment, setNewComment] = useState({
         userComment: "",
         dateAdded: new Date(),
-        itemCommentId: ""
+        itemId: ""
     })
+    const [feedback, setFeedback] = useState("")
+    useEffect(() => {
+        if (feedback !== "") {
+            // Clear feedback to make entire element disappear after 3 seconds
+            setTimeout(() => setFeedback(""), 3000);
+            setTimeout(() => navigate("/"), 1500);
+
+
+        }
+    }, [feedback])
     const handleAddNewItem = (event) => {
         event.preventDefault()
         if (
@@ -34,16 +42,16 @@ export const CreateItem = () => {
             elephantPost('http://localhost:8088/items', newItem, "POST")
                 .then((response) => response.json())
                 .then((returnedData) => {
-                    const copy = { ...newItemComment }
+                    const copy = { ...newComment }
                     copy.itemId = returnedData.id
-                    elephantPost('http://localhost:8088/itemComments', copy, "POST")
-                        .then((response) => response.json())
-                        .then((returnedData1) => {
-                            const copy2 = { ...newComment }
-                            copy2.itemCommentId = returnedData1.id
 
-                            elephantPost('http://localhost:8088/itemComments', copy2, "POST")
+                    elephantPost('http://localhost:8088/comments', copy, "POST")
+                        .then((response) => response.json())
+                        .then(() => {
+
+                            setFeedback("Item successfully added")
                         })
+
                 }
 
                 )
@@ -59,6 +67,9 @@ export const CreateItem = () => {
         setNewItem(copy)
     }
     return (<>
+        <div className={`${feedback.includes("Error") ? "error" : "feedback"} ${feedback === "" ? "invisible" : "visible"}`}>
+            {feedback}
+        </div>
         <form className="ticketForm">
             <h2 className="ticketForm__title">New TrackIT Item</h2>
             <fieldset>
@@ -134,7 +145,7 @@ export const CreateItem = () => {
                     handleAddNewItem(event)
                 }}
                 className="btn btn-primary">
-                Submit Ticket
+                Create Item
             </button>
         </form>
 

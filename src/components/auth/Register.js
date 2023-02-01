@@ -6,7 +6,8 @@ export const Register = (props) => {
     const [newUser, setNewUser] = useState({
         email: "",
         firstName: "",
-        lastName: ""
+        lastName: "",
+        phoneNumber: ""
     })
     let navigate = useNavigate()
 
@@ -21,7 +22,7 @@ export const Register = (props) => {
             .then(res => res.json())
             .then(createdUser => {
                 if (createdUser.hasOwnProperty("id")) {
-                    localStorage.setItem("trackit_user", JSON.stringify({
+                    localStorage.setItem("trackIT_user", JSON.stringify({
                         id: createdUser.id
                     }))
 
@@ -73,6 +74,12 @@ export const Register = (props) => {
                     <input onChange={updateUser}
                         type="email" id="email" className="form-control"
                         placeholder="Email address" required />
+                </fieldset>
+                <fieldset>
+                    <label htmlFor="phoneNumber"> Phone Number </label>
+                    <input onChange={updateUser}
+                        type="phoneNumber" id="phoneNumber" className="form-control"
+                        placeholder="Phone Number" required />
                 </fieldset>
                 <fieldset>
                     <button type="submit"> Register </button>
