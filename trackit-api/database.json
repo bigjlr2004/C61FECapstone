@@ -66,7 +66,11 @@
       "userId": 1,
       "dateAdded": "2023-02-01T11:11:28.956Z",
       "status": true,
-      "id": 5
+      "id": 5,
+      "category": {
+        "id": 2,
+        "name": "Stop"
+      }
     },
     {
       "name": "Teach my Dog tricks",
@@ -129,6 +133,19 @@
       "dateAdded": "2023-02-01T11:30:54.452Z",
       "itemId": 8,
       "id": 8
+    },
+    {
+      "dateAdded": "2023-02-01T22:31:27.898Z",
+      "userComment": "New Comment",
+      "itemId": "5",
+      "description": "w",
+      "id": 9
+    },
+    {
+      "dateAdded": "2023-02-01T22:48:02.941Z",
+      "userComment": "Test Comment",
+      "itemId": "5",
+      "id": 10
     }
   ],
   "categories": [

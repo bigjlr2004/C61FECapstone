@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom";
 import { elephantPost, standardFetch } from "../../Api_Manager";
 import { Categories } from "../Categories/Categories";
+import { ItemComments } from "./ItemComments";
 
 export const EditItem = () => {
 
@@ -17,23 +18,23 @@ export const EditItem = () => {
         dateAdded: new Date(),
 
     })
+
+
     useEffect(
         () => {
-            standardFetch(`http://localhost:8088/items/${itemId}`)
+            standardFetch(`http://localhost:8088/items/${itemId}?&_expand=category`)
                 .then((data) => {
                     const user = data
                     setItem(data)
                 })
         }, [])
 
-    const [feedback, setFeedback] = useState("")
-    useEffect(() => {
-        if (feedback !== "") {
-            // Clear feedback to make entire element disappear after 3 seconds
-            setTimeout(() => setFeedback(""), 3000);
-            setTimeout(() => navigate("/user_history"), 1500);
-        }
-    }, [feedback])
+    const changeItem = (evt) => {
+        const copy = { ...item }
+        copy[evt.target.id] = evt.target.value
+        setItem(copy)
+    }
+
     const handleUpdateItem = (event) => {
         event.preventDefault()
         if (
@@ -49,11 +50,16 @@ export const EditItem = () => {
         }
     }
 
-    const changeItem = (evt) => {
-        const copy = { ...item }
-        copy[evt.target.id] = evt.target.value
-        setItem(copy)
-    }
+
+
+    const [feedback, setFeedback] = useState("")
+    useEffect(() => {
+        if (feedback !== "") {
+            // Clear feedback to make entire element disappear after 3 seconds
+            setTimeout(() => setFeedback(""), 3000);
+            setTimeout(() => navigate("/user_history"), 1500);
+        }
+    }, [feedback])
     return (<>
         <div className={`${feedback.includes("Error") ? "error" : "feedback"} ${feedback === "" ? "invisible" : "visible"}`}>
             {feedback}
@@ -108,14 +114,15 @@ export const EditItem = () => {
                 </div>
 
             </fieldset>
-
             <button
                 onClick={(event) => {
                     handleUpdateItem(event)
                 }}
                 className="btn btn-primary">
-                Update Item
+                UpdateItem
             </button>
+            <div>{<ItemComments item={item} itemId={itemId} />}</div>
+
         </form>
 
     </>)
