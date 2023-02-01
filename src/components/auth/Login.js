@@ -15,7 +15,7 @@ export const Login = () => {
             .then(foundUsers => {
                 if (foundUsers.length === 1) {
                     const user = foundUsers[0]
-                    localStorage.setItem("trackit_user", JSON.stringify({
+                    localStorage.setItem("trackIT_user", JSON.stringify({
                         id: user.id
 
                     }))

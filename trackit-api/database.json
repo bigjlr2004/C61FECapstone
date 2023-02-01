@@ -17,23 +17,64 @@
     {
       "id": 1,
       "name": "Quit Smoking",
+      "description": "Item to help me quit smoking.",
       "categoryId": 2,
-      "itemCommentId": 1,
       "userId": 1,
       "dateAdded": "05/17/2021",
       "status": "false"
+    },
+    {
+      "name": "test",
+      "categoryId": 2,
+      "description": "test",
+      "userId": 1,
+      "dateAdded": "2023-02-01T00:21:50.494Z",
+      "status": true,
+      "id": 2
+    },
+    {
+      "name": "Checking  Name",
+      "categoryId": 3,
+      "description": "Checking Description",
+      "userId": 1,
+      "dateAdded": "2023-02-01T02:24:29.189Z",
+      "status": true,
+      "id": 3
     }
   ],
   "itemComments": [
     {
       "id": 1,
-      "commentId": 1
+      "commentId": 1,
+      "itemId": 1
+    },
+    {
+      "itemId": 2,
+      "userId": 1,
+      "id": 2
+    },
+    {
+      "userComment": "test",
+      "dateAdded": "2023-02-01T00:21:50.494Z",
+      "itemCommentId": 2,
+      "id": 3
+    },
+    {
+      "itemId": 3,
+      "userId": 1,
+      "id": 4
+    },
+    {
+      "userComment": "Checking Comment POst",
+      "dateAdded": "2023-02-01T02:24:29.189Z",
+      "itemCommentId": 4,
+      "id": 5
     }
   ],
   "comments": [
     {
       "id": 1,
-      "commentText": "I quit smoking.",
+      "userComment": "I quit smoking.",
       "dateAdded": "05/18/2021"
     }
   ],
