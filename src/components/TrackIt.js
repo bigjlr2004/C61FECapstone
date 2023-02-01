@@ -7,7 +7,7 @@ import { Register } from "./auth/Register"
 import "./Repairs.css"
 
 
-export const Repairs = () => {
+export const TrackIT = () => {
 	return <Routes>
 		<Route path="/login" element={<Login />} />
 		<Route path="/register" element={<Register />} />

@@ -1,0 +1,142 @@
+import { useState } from "react"
+import { elephantPost, standardFetch } from "../../Api_Manager";
+import { Categories } from "../Categories/Categories";
+
+export const CreateItem = () => {
+
+    const localTrackITUser = localStorage.getItem("trackIT_user")
+    const trackITObject = JSON.parse(localTrackITUser);
+    const [newItem, setNewItem] = useState({
+        name: "",
+        categoryId: "",
+        description: "",
+        userId: trackITObject.id,
+        dateAdded: new Date(),
+        status: true
+    })
+    const [newItemComment, setNewItemComment] = useState({
+        itemId: "",
+        userId: trackITObject.id
+
+    })
+    const [newComment, setNewComment] = useState({
+        userComment: "",
+        dateAdded: new Date(),
+        itemCommentId: ""
+    })
+    const handleAddNewItem = (event) => {
+        event.preventDefault()
+        if (
+            newItem.name &&
+            newItem.categoryId &&
+            newComment.userComment
+        ) {
+            elephantPost('http://localhost:8088/items', newItem, "POST")
+                .then((response) => response.json())
+                .then((returnedData) => {
+                    const copy = { ...newItemComment }
+                    copy.itemId = returnedData.id
+                    elephantPost('http://localhost:8088/itemComments', copy, "POST")
+                        .then((response) => response.json())
+                        .then((returnedData1) => {
+                            const copy2 = { ...newComment }
+                            copy2.itemCommentId = returnedData1.id
+
+                            elephantPost('http://localhost:8088/itemComments', copy2, "POST")
+                        })
+                }
+
+                )
+        } else { alert(`Please complete the form`) }
+
+    }
+
+
+
+    const updateItem = (evt) => {
+        const copy = { ...newItem }
+        copy[evt.target.id] = evt.target.value
+        setNewItem(copy)
+    }
+    return (<>
+        <form className="ticketForm">
+            <h2 className="ticketForm__title">New TrackIT Item</h2>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="name">Name:</label>
+                    <input
+                        required autoFocus
+                        id="name"
+                        type="text"
+                        className="form-control"
+                        placeholder="Item Name"
+                        value={newItem.name}
+                        onChange={updateItem}
+                        autoComplete="off"
+                    />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="name">Description:</label>
+                    <input
+                        required autoFocus
+                        id="description"
+                        type="text"
+                        className="form-control"
+                        placeholder="Item Description"
+                        value={newItem.description}
+                        onChange={updateItem}
+                        autoComplete="off"
+                    />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div id="category-selector">
+                    <select
+                        className="type-box"
+                        value={newItem.categoryId}
+                        id="category"
+                        onChange={(event) => {
+                            const copy = { ...newItem }
+                            copy.categoryId = parseInt(event.target.value)
+                            setNewItem(copy)
+                        }
+                        }
+                    >
+                        {<Categories />}
+                    </select>
+                </div>
+
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="description">Comment:</label>
+                    <input
+                        required autoFocus
+                        type="text"
+                        className="form-control"
+                        placeholder="Enter a good comment to get you started."
+                        id="userComment"
+                        value={newComment.userComment}
+                        autoComplete="off"
+                        onChange={(evt) => {
+                            const copy = { ...newComment }
+                            copy[evt.target.id] = evt.target.value
+                            setNewComment(copy)
+                        }}
+
+                    />
+                </div>
+            </fieldset>
+            <button
+                onClick={(event) => {
+                    handleAddNewItem(event)
+                }}
+                className="btn btn-primary">
+                Submit Ticket
+            </button>
+        </form>
+
+    </>)
+}
