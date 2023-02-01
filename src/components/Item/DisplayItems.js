@@ -1,7 +1,8 @@
+import { useNavigate } from "react-router-dom"
 
 
 export const DisplayItems = ({ items, handleDeleteItem }) => {
-
+    const navigate = useNavigate()
     const returnDate = (passedDateString) => {
         let formattedDate = ""
         const date = new Date(passedDateString)
@@ -28,6 +29,14 @@ export const DisplayItems = ({ items, handleDeleteItem }) => {
                             }}
                             className="btn btn-primary">
                             Delete Item
+                        </button>
+                        <button
+                            id={itemObj.id}
+                            onClick={(event) => {
+                                navigate(`/items/${itemObj.id}/edit`)
+                            }}
+                            className="btn btn-primary">
+                            Edit Item
                         </button>
                     </div>
                 )
