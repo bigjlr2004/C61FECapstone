@@ -1,16 +1,10 @@
 import { useNavigate } from "react-router-dom"
+import { returnDate } from "../../Api_Manager"
 
 
 export const DisplayItems = ({ items, handleDeleteItem }) => {
     const navigate = useNavigate()
-    const returnDate = (passedDateString) => {
-        let formattedDate = ""
-        const date = new Date(passedDateString)
-        const month = date.getMonth()
-        const day = date.getDate()
-        const year = date.getFullYear()
-        return formattedDate = `${month}, ${day}, ${year}`
-    }
+
 
     return (<>
         <h1>Item List</h1>
