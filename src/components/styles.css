@@ -1,0 +1,113 @@
+/* Import the google web fonts you want to use */
+@import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
+
+/*Typography
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+textarea {
+  color: #404040;
+  font-family: "Comfortaa", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+body {
+  padding: 0 3rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Patua One", serif;
+  letter-spacing: 2px;
+}
+
+p {
+  margin-bottom: 1.5em;
+}
+
+.title--main {
+  margin-block-end: 0;
+}
+
+/* drop down box styling*/
+.type-box {
+  height: 35px;
+  font-size: 14px;
+  font-family: "Comfortaa", Arial, sans-serif;
+  color: #404040;
+}
+
+/* feedback styling*/
+.feedback {
+  border: 1px dotted cadetblue;
+  color: darkblue;
+  font-size: 1.5rem;
+  padding: 1rem;
+  background-color: rgb(218, 230, 247);
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  width: 70%;
+  transform: translate(-50%, -50%);
+  animation: 1s slideDown;
+}
+
+.invisible {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.error {
+  border: 1px dotted rgb(107, 21, 4);
+  padding: 1rem;
+  background-color: rgb(255, 229, 228);
+}
+
+@keyframes slideDown {
+  0% {
+    top: 0%;
+  }
+
+  100% {
+    top: 50%;
+  }
+}
+
+.items-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.item-card {
+  flex: 0 0 25%;
+  display: flex;
+  padding: 15px;
+  margin: 15px;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px black solid;
+}
+
+
+
+.item-img:hover {
+  box-shadow: 3px 2px 3px gray;
+}
+
+.item-name {
+  font-size: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
