@@ -30,7 +30,6 @@ export const ItemContainer = () => {
     return (<>
         {<DisplayItems
             items={items}
-
             handleDeleteItem={handleDeleteItem}
 
         />}
