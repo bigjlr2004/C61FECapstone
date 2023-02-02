@@ -14,7 +14,7 @@ export const CreateItem = () => {
         description: "",
         userId: trackITObject.id,
         dateAdded: new Date(),
-        status: true
+        status: "active"
     })
 
     const [newComment, setNewComment] = useState({

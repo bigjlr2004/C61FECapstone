@@ -1,6 +1,5 @@
 import { Outlet, Route, Routes } from "react-router-dom"
 import { CreateItem } from "../Item/CreateItem"
-import { DisplayItems } from "../Item/DisplayItems"
 import { EditItem } from "../Item/EditItem"
 import { ItemContainer } from "../Item/ItemContainer"
 import { EditUser } from "../UserInfo/EditUser"

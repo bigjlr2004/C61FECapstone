@@ -30,7 +30,7 @@
       "categoryId": 2,
       "userId": 1,
       "dateAdded": "05/17/2021",
-      "status": "false"
+      "status": "inactive"
     },
     {
       "name": "Positive Affirmation Practice",
@@ -38,7 +38,7 @@
       "description": "You are a good person at all times of day ",
       "userId": 1,
       "dateAdded": "2023-02-01T10:22:46.869Z",
-      "status": true,
+      "status": "active",
       "id": 2
     },
     {
@@ -47,7 +47,7 @@
       "description": "You are happy in your own skin and in your own circumstances.",
       "userId": 1,
       "dateAdded": "2023-02-01T10:53:35.578Z",
-      "status": true,
+      "status": "active",
       "id": 3
     },
     {
@@ -56,7 +56,7 @@
       "description": "You are doing work that you enjoy and find fulfilling.",
       "userId": 1,
       "dateAdded": "2023-02-01T11:07:22.671Z",
-      "status": true,
+      "status": "inactive",
       "id": 4
     },
     {
@@ -65,12 +65,8 @@
       "description": "Today will be a gorgeous day to remember.",
       "userId": 1,
       "dateAdded": "2023-02-01T11:11:28.956Z",
-      "status": true,
-      "id": 5,
-      "category": {
-        "id": 2,
-        "name": "Stop"
-      }
+      "status": "inactive",
+      "id": 5
     },
     {
       "name": "Teach my Dog tricks",
@@ -78,7 +74,7 @@
       "description": "I want to teach my dog new tricks",
       "userId": 2,
       "dateAdded": "2023-02-01T11:30:02.299Z",
-      "status": true,
+      "status": "inactive",
       "id": 7
     },
     {
@@ -87,8 +83,17 @@
       "description": "I wonder if I can learn new tricks",
       "userId": 2,
       "dateAdded": "2023-02-01T11:30:54.452Z",
-      "status": true,
+      "status": "active",
       "id": 8
+    },
+    {
+      "name": "This is my future",
+      "categoryId": 1,
+      "description": "I think I was born to be happy.",
+      "userId": 1,
+      "dateAdded": "2023-02-02T11:54:58.875Z",
+      "status": "active",
+      "id": 9
     }
   ],
   "comments": [
@@ -146,6 +151,18 @@
       "userComment": "Test Comment",
       "itemId": "5",
       "id": 10
+    },
+    {
+      "dateAdded": "2023-02-02T09:47:54.126Z",
+      "userComment": "Changing the world with this one",
+      "itemId": "2",
+      "id": 11
+    },
+    {
+      "userComment": "There is a great reason this is unfolding before me now.",
+      "dateAdded": "2023-02-02T11:54:58.875Z",
+      "itemId": 9,
+      "id": 12
     }
   ],
   "categories": [

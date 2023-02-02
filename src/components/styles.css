@@ -91,6 +91,12 @@ p {
 
 }
 
+.active-items-container {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
 .item-card {
   flex: 0 0 25%;
   display: flex;

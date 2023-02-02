@@ -2,16 +2,10 @@ import { useEffect, useState } from "react";
 import { fetchDelete, standardFetch } from "../../Api_Manager";
 import { DisplayItems } from "./DisplayItems";
 
-export const ItemContainer = () => {
-
-
-
+export const HomePage = () => {
     const localTrackITUser = localStorage.getItem("trackIT_user")
     const trackITObject = JSON.parse(localTrackITUser);
     const [items, setItems] = useState([])
-    const [filteredItems, setFiltered] = useState([])
-    const [seeAllItems, setSeeAllItems] = useState("")
-
 
     const getAllItems = () => {
         standardFetch(`http://localhost:8088/items/?userId=${trackITObject.id}&_expand=category`)
@@ -20,31 +14,10 @@ export const ItemContainer = () => {
             })
     }
 
-
-    useEffect(
-        () => {
-            if (seeAllItems) {
-                setFiltered(items)
-            } else {
-                const activeItems = items.filter((item) => {
-                    return item.status === "active"
-                })
-                setFiltered(activeItems)
-            }
-        }, [seeAllItems])
-
     useEffect(
         () => {
             getAllItems()
         }, [])
-
-    useEffect(
-        () => {
-            const activeItems = items.filter((item) => {
-                return item.status === "active"
-            })
-            setFiltered(activeItems)
-        }, [items])
 
 
     const handleDeleteItem = (event) => {
@@ -53,10 +26,10 @@ export const ItemContainer = () => {
     }
     return (<>
         {<DisplayItems
-            filteredItems={filteredItems}
+            items={items}
             handleDeleteItem={handleDeleteItem}
-            setSeeAllItems={setSeeAllItems}
 
         />}
     </>)
+
 }
