@@ -57,7 +57,7 @@ export const EditItem = () => {
         if (feedback !== "") {
             // Clear feedback to make entire element disappear after 3 seconds
             setTimeout(() => setFeedback(""), 3000);
-            setTimeout(() => navigate("/user_history"), 1500);
+            setTimeout(() => navigate("/homepage"), 1500);
         }
     }, [feedback])
     return (<>

@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
 import { fetchDelete, standardFetch } from "../../Api_Manager";
-import { DisplayItems } from "./DisplayItems";
+import { ItemContainer } from "../Item/ItemContainer";
+
 
 export const HomePage = () => {
     const localTrackITUser = localStorage.getItem("trackIT_user")
     const trackITObject = JSON.parse(localTrackITUser);
-    const [items, setItems] = useState([])
+    const [user, setUser] = useState([])
 
     const getAllItems = () => {
-        standardFetch(`http://localhost:8088/items/?userId=${trackITObject.id}&_expand=category`)
+        standardFetch(`http://localhost:8088/users/${trackITObject.id}`)
             .then((data) => {
-                return setItems(data)
+                return setUser(data)
             })
     }
 
@@ -20,16 +21,13 @@ export const HomePage = () => {
         }, [])
 
 
-    const handleDeleteItem = (event) => {
-        fetchDelete(`http://localhost:8088/items/${event.target.id}`).then(() => { getAllItems() })
 
-    }
     return (<>
-        {<DisplayItems
-            items={items}
-            handleDeleteItem={handleDeleteItem}
+        <div>
+            <h2>Welcome {user.firstName} lets review the items you are tracking.</h2>
+            {<ItemContainer />}
+        </div>
 
-        />}
     </>)
 
 }

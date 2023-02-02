@@ -8,6 +8,9 @@ export const NavBar = () => {
         <ul className="navbar">
 
             <li className="navbar__item active">
+                <Link className="navbar__link" to="/homepage">Home</Link>
+            </li>
+            <li className="navbar__item active">
                 <Link className="navbar__link" to="/new_item">Create Item</Link>
             </li>
             <li className="navbar__item active">
@@ -16,6 +19,7 @@ export const NavBar = () => {
             <li className="navbar__item active">
                 <Link className="navbar__link" to="/user_history">History</Link>
             </li>
+
 
             {
                 localStorage.getItem("trackIT_user")

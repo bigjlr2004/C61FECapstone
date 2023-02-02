@@ -78,7 +78,7 @@ export const Register = (props) => {
                 <fieldset>
                     <label htmlFor="phoneNumber"> Phone Number </label>
                     <input onChange={updateUser}
-                        type="phoneNumber" id="phoneNumber" className="form-control"
+                        type="tel" id="phoneNumber" className="form-control"
                         placeholder="Phone Number" required />
                 </fieldset>
                 <fieldset>

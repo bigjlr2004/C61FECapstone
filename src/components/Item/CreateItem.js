@@ -27,7 +27,7 @@ export const CreateItem = () => {
         if (feedback !== "") {
             // Clear feedback to make entire element disappear after 3 seconds
             setTimeout(() => setFeedback(""), 3000);
-            setTimeout(() => navigate("/"), 1500);
+            setTimeout(() => navigate("/homepage"), 1500);
 
 
         }

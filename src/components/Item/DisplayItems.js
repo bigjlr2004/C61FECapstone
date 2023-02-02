@@ -6,7 +6,7 @@ export const DisplayItems = ({ filteredItems, handleDeleteItem, setSeeAllItems }
 
 
     return (<>
-        <h1>Item List</h1>
+
         <button
             id={"seeAll-btn"}
             onClick={() => {

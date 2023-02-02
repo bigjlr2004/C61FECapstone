@@ -1,4 +1,5 @@
 import { Outlet, Route, Routes } from "react-router-dom"
+import { HomePage } from "../HomePage/HomePage"
 import { CreateItem } from "../Item/CreateItem"
 import { EditItem } from "../Item/EditItem"
 import { ItemContainer } from "../Item/ItemContainer"
@@ -19,6 +20,7 @@ export const ApplicationViews = () => {
 				<Route path="user_history" element={<ItemContainer />} />
 				<Route path="user_information" element={<EditUser />} />
 				<Route path="items/:itemId/edit" element={<EditItem />} />
+				<Route path="homepage" element={<HomePage />} />
 
 			</Route>
 		</Routes>

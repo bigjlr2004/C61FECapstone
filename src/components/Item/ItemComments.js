@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
-import { elephantPost, returnDate, standardFetch } from "../../Api_Manager"
+import { elephantPost, fetchDelete, returnDate, standardFetch } from "../../Api_Manager"
 
 export const ItemComments = ({ item, itemId }) => {
     const [itemComments, setItemComments] = useState([])
-    const [showComment, setShowComment] = useState("")
+    const [showComment, setShowComment] = useState("false")
     const [newComment, setNewComment] = useState({
         dateAdded: new Date(),
         userComment: "",
@@ -14,13 +14,14 @@ export const ItemComments = ({ item, itemId }) => {
         standardFetch(`http://localhost:8088/comments?itemId=${itemId}`)
             .then((data) => {
                 setItemComments(data)
-                setShowComment("")
+
             })
     }
     useEffect(
         () => {
             getComments()
         }, [])
+
     const HandleCommentSubmission = (event) => {
         event.preventDefault()
         if (
@@ -29,10 +30,9 @@ export const ItemComments = ({ item, itemId }) => {
             elephantPost('http://localhost:8088/comments', newComment, "POST")
                 .then((response) => response.json())
                 .then(() => {
-
-                    setShowComment("")
                     getComments()
                 })
+            setShowComment("false")
 
         } else { alert(`Please complete the form`) }
     }
@@ -42,60 +42,74 @@ export const ItemComments = ({ item, itemId }) => {
         copy[evt.target.id] = evt.target.value
         setNewComment(copy)
     }
+    const handleDeleteComment = (event) => {
+        fetchDelete(`http://localhost:8088/comments/${event.target.id}`).then(() => { getComments() })
+
+    }
     const listComments = (itemComments) => {
         return <>
             {itemComments.map((comment) => {
                 return <div className="item-card" key={comment.id}>
                     <div className="item-name">Comment: {comment.userComment}</div>
                     <div className="item-name">Date Added: {returnDate(comment.dateAdded)}</div>
+                    <button
+                        id={comment.id}
+                        onClick={(event) => {
+
+                            handleDeleteComment(event)
+                        }}
+                        className={`btn btn-primary`}>
+                        Delete
+                    </button>
                 </div>
             })}
-
         </>
-
-
     }
 
+
     return (<>
+        <button
+            id={itemId}
+            onClick={(event) => {
+                event.preventDefault()
+                setShowComment("true")
+            }}
+            className={`${showComment === "false" ? "visible" : "invisible"} btn btn-primary`}>
+            Add Comment
+        </button>
+        <fieldset>
+            <div className={`${showComment === "true" ? "visible" : "invisible"}`}>
+                <div className="form-group">
+                    <label
+                        className={`form - control`}
+                        htmlFor="newComment">New Comment:</label>
+                    <input
+                        required autoFocus
+                        id="userComment"
+                        type="text"
+                        className={`form-control`}
+                        placeholder="Enter you new comment here."
+                        value={newComment.userComment}
+                        onChange={changeItem}
+                        autoComplete="off"
+                    />
+                </div>
+            </div>
+            <button
+                id={itemId}
+                onClick={(event) => {
+                    HandleCommentSubmission(event)
+                }}
+                className={`${showComment === "true" ? "visible" : "invisible"} btn btn-primary`}>
+                Submit
+            </button>
+
+        </fieldset>
+
 
         <h1>Comment List</h1>
         <div className="items-container">
             {listComments(itemComments)}
-            <fieldset>
-                <div className={`${showComment === "" ? "invisible" : "visible"}`}>
-                    <div className="form-group">
-                        <label
-                            className={`form - control`}
-                            htmlFor="newComment">New Comment:</label>
-                        <input
-                            required autoFocus
-                            id="userComment"
-                            type="text"
-                            className={`form - control`}
-                            placeholder="Item Description"
-                            value={newComment.userComment}
-                            onChange={changeItem}
-                            autoComplete="off"
-                        />
-                    </div>
-                </div>
-                <button
-                    id={itemId}
-                    onClick={(event) => {
-                        setShowComment(event.target.id)
-                    }}
-                    className={`${showComment === "" ? "visible" : "invisible"} btn btn-primary`}>
-                    Add Comment
-                </button>
-                <button
-                    id={itemId}
-                    onClick={(event) => {
-                        HandleCommentSubmission(event)
-                    }}
-                    className={`${showComment === "" ? "invisible" : "visible"} btn btn-primary`}>
-                    Submit
-                </button>
-            </fieldset>
         </div>
 
 
