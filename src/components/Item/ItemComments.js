@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react"
 import { elephantPost, fetchDelete, returnDate, standardFetch } from "../../Api_Manager"
+import { EditComment } from "./EditComment"
 
 export const ItemComments = ({ item, itemId }) => {
     const [itemComments, setItemComments] = useState([])
     const [showComment, setShowComment] = useState("false")
+    const [editComment, setEditComment] = useState("false")
+
     const [newComment, setNewComment] = useState({
         dateAdded: new Date(),
         userComment: "",
@@ -52,13 +55,18 @@ export const ItemComments = ({ item, itemId }) => {
                 return <div className="item-card" key={comment.id}>
                     <div className="item-name">Comment: {comment.userComment}</div>
                     <div className="item-name">Date Added: {returnDate(comment.dateAdded)}</div>
+                    <EditComment
+                        comment={comment}
+                        editComment={editComment}
+                        setEditComment={setEditComment}
+                        item={item}
+                        getComments={getComments} />
                     <button
                         id={comment.id}
                         onClick={(event) => {
-
                             handleDeleteComment(event)
                         }}
-                        className={`btn btn-primary`}>
+                        className={`${editComment === "false" ? "visible" : "invisible"} btn btn-primary`}>
                         Delete
                     </button>
                 </div>
@@ -74,7 +82,7 @@ export const ItemComments = ({ item, itemId }) => {
                 event.preventDefault()
                 setShowComment("true")
             }}
-            className={`${showComment === "false" ? "visible" : "invisible"} btn btn-primary`}>
+            className={`${showComment === "false" && item.status === "active" ? "visible" : "invisible"} btn btn-primary`}>
             Add Comment
         </button>
         <fieldset>
@@ -103,10 +111,7 @@ export const ItemComments = ({ item, itemId }) => {
                 className={`${showComment === "true" ? "visible" : "invisible"} btn btn-primary`}>
                 Submit
             </button>
-
         </fieldset>
-
-
         <h1>Comment List</h1>
         <div className="items-container">
             {listComments(itemComments)}

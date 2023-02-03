@@ -56,6 +56,7 @@ export const ItemContainer = () => {
             filteredItems={filteredItems}
             handleDeleteItem={handleDeleteItem}
             setSeeAllItems={setSeeAllItems}
+            getAllItems={getAllItems}
 
         />}
     </>)
