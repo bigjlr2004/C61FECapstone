@@ -43,6 +43,12 @@ export const EditUser = () => {
 
             })
     }
+    const changeUser = (evt) => {
+        evt.preventDefault()
+        const copy = { ...user }
+        copy.firstName = evt.target.value
+        updateUser(copy)
+    }
 
     return (<>
         <div className={`${feedback.includes("Error") ? "error" : "feedback"} ${feedback === "" ? "invisible" : "visible"}`}>
@@ -60,10 +66,7 @@ export const EditUser = () => {
                         value={user.firstName}
                         onChange={
                             (evt) => {
-
-                                const copy = { ...user }
-                                copy.firstName = evt.target.value
-                                updateUser(copy)
+                                { changeUser(evt) }
                             }
                         } />
                 </div>
