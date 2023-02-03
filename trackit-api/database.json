@@ -5,7 +5,7 @@
       "firstName": "John ",
       "lastName": "Roberts",
       "email": "john@john.com",
-      "phoneNumber": "479-234-1235"
+      "phoneNumber": "479-234-1234"
     },
     {
       "email": "jerbear@jerbear.com",
@@ -41,6 +41,13 @@
       "lastName": "Stallone",
       "phoneNumber": "479-234-1509",
       "id": 6
+    },
+    {
+      "email": "stnick@northpole.com",
+      "firstName": "Mr. ",
+      "lastName": "Claus",
+      "phoneNumber": "899-234-7689",
+      "id": 7
     }
   ],
   "items": [
@@ -81,15 +88,6 @@
       "id": 8
     },
     {
-      "name": "Positive Affirmation Practice",
-      "categoryId": 1,
-      "description": "Start a new positive affirmation Practice",
-      "userId": 1,
-      "dateAdded": "2023-02-02T12:16:00.293Z",
-      "status": "inactive",
-      "id": 10
-    },
-    {
       "name": "Its a wonderful life",
       "categoryId": 3,
       "description": "Tracking manifesting a wonderful life",
@@ -113,17 +111,21 @@
       "description": "I muster up more hope and courage from deep inside me.",
       "userId": 1,
       "dateAdded": "2023-02-03T00:30:14.934Z",
-      "status": "active",
+      "status": "inactive",
       "id": 13
     },
     {
       "name": "More Rest",
-      "categoryId": 1,
+      "categoryId": 2,
       "description": "Inner Peace Practice",
       "userId": 1,
       "dateAdded": "2023-02-03T00:31:14.643Z",
       "status": "active",
-      "id": 14
+      "id": 14,
+      "category": {
+        "id": 1,
+        "name": "Start"
+      }
     },
     {
       "name": "I am the greatest hunter PERIOD.",
@@ -142,6 +144,24 @@
       "dateAdded": "2023-02-03T15:47:48.925Z",
       "status": "active",
       "id": 16
+    },
+    {
+      "name": "Feeling really good about this app.",
+      "categoryId": 1,
+      "description": "This has been such an awesome experience",
+      "userId": 1,
+      "dateAdded": "2023-02-03T19:55:04.767Z",
+      "status": "active",
+      "id": 17
+    },
+    {
+      "name": "I need more time off",
+      "categoryId": 1,
+      "description": "Need more time off.",
+      "userId": 7,
+      "dateAdded": "2023-02-03T20:16:29.033Z",
+      "status": "active",
+      "id": 18
     }
   ],
   "comments": [
@@ -207,7 +227,7 @@
       "id": 26
     },
     {
-      "userComment": "I release my mind of thought until the morning.",
+      "userComment": "I my mind of thought until the morning.",
       "dateAdded": "2023-02-03T00:31:14.643Z",
       "itemId": 14,
       "id": 27
@@ -229,6 +249,36 @@
       "dateAdded": "2023-02-03T15:48:25.770Z",
       "itemId": 16,
       "id": 30
+    },
+    {
+      "userComment": "I am deeply fulfilled with who I am..",
+      "dateAdded": "2023-02-03T19:55:04.767Z",
+      "itemId": 17,
+      "id": 31
+    },
+    {
+      "dateAdded": "2023-02-03T20:00:07.839Z",
+      "userComment": "John was here testing comments.",
+      "itemId": "13",
+      "id": 32
+    },
+    {
+      "dateAdded": "2023-02-03T20:01:30.111Z",
+      "userComment": "Sam was here testing comments.",
+      "itemId": "14",
+      "id": 33
+    },
+    {
+      "userComment": "Elves are always perfect.",
+      "dateAdded": "2023-02-03T20:16:29.033Z",
+      "itemId": 18,
+      "id": 34
+    },
+    {
+      "dateAdded": "2023-02-03T20:38:51.566Z",
+      "userComment": "Lets do this.",
+      "itemId": "14",
+      "id": 35
     }
   ],
   "categories": [

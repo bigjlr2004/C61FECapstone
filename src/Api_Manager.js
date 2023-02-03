@@ -27,7 +27,7 @@ export const returnDate = (passedDateString) => {
 
 export const sortbyDate = (arr) => {
     const sorter = (a, b) => {
-        return new Date(b.dateAdded).getTime() - new Date(a.dateAdded).getTime()
+        return new Date(a.dateAdded).getTime() - new Date(b.dateAdded).getTime()
     }
     return arr.sort(sorter)
 }

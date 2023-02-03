@@ -149,6 +149,7 @@ export const CreateItem = () => {
             </button>
             <button
                 onClick={(event) => {
+                    event.preventDefault()
                     navigate("/homepage")
                 }}
                 className="btn btn-primary">
