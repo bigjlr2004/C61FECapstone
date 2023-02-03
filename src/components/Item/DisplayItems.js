@@ -1,9 +1,30 @@
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { returnDate } from "../../Api_Manager"
+import { elephantPost, returnDate } from "../../Api_Manager"
 
-export const DisplayItems = ({ filteredItems, handleDeleteItem, setSeeAllItems }) => {
+export const DisplayItems = ({ filteredItems, handleDeleteItem, setSeeAllItems, getAllItems }) => {
     const navigate = useNavigate()
+    const handleChangeStatus = (event, obj) => {
+        const copy = { ...obj }
+        copy.itemId = obj.id
+        copy.status = "inactive"
 
+        fetch(`http://localhost:8088/items/${copy.itemId}`, {
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json"
+            },
+            method: "PATCH",
+
+            // Sending only the fields that need to be updated
+            body: JSON.stringify({
+                status: `${copy.status}`
+
+            })
+        }).then(() => {
+            getAllItems()
+        })
+    }
 
     return (<>
 
@@ -48,7 +69,17 @@ export const DisplayItems = ({ filteredItems, handleDeleteItem, setSeeAllItems }
                             className="btn btn-primary">
                             Edit Item
                         </button>
+                        <button
+                            id={itemObj.id}
+                            value={"inactive"}
+                            onClick={(event) => {
+                                handleChangeStatus(event, itemObj)
+                            }}
+                            className={`${itemObj.status === "inactive" ? "invisible" : "visible"} btn btn-primary`}>
+                            Retire Item
+                        </button>
                     </div>
+
                 )
             })}
         </div>

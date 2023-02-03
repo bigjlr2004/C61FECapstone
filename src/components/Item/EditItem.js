@@ -39,7 +39,8 @@ export const EditItem = () => {
         event.preventDefault()
         if (
             item.name &&
-            item.categoryId
+            item.categoryId &&
+            item.description
         ) {
             elephantPost(`http://localhost:8088/items/${itemId}`, item, "PUT")
                 .then(() => {

@@ -33,24 +33,6 @@
       "status": "inactive"
     },
     {
-      "name": "Positive Affirmation Practice",
-      "categoryId": 2,
-      "description": "You are a good person at all times of day ",
-      "userId": 1,
-      "dateAdded": "2023-02-01T10:22:46.869Z",
-      "status": "active",
-      "id": 2
-    },
-    {
-      "name": "Positive Affirmations",
-      "categoryId": 1,
-      "description": "You are happy in your own skin and in your own circumstances.",
-      "userId": 1,
-      "dateAdded": "2023-02-01T10:53:35.578Z",
-      "status": "active",
-      "id": 3
-    },
-    {
       "name": "Fulfilling Work",
       "categoryId": 1,
       "description": "You are doing work that you enjoy and find fulfilling.",
@@ -83,17 +65,8 @@
       "description": "I wonder if I can learn new tricks",
       "userId": 2,
       "dateAdded": "2023-02-01T11:30:54.452Z",
-      "status": "active",
+      "status": "inactive",
       "id": 8
-    },
-    {
-      "name": "This is my future",
-      "categoryId": 1,
-      "description": "I think I was born to be happy.",
-      "userId": 1,
-      "dateAdded": "2023-02-02T11:54:58.875Z",
-      "status": "active",
-      "id": 9
     },
     {
       "name": "Positive Affirmation Practice",
@@ -101,7 +74,7 @@
       "description": "Start a new positive affirmation Practice",
       "userId": 1,
       "dateAdded": "2023-02-02T12:16:00.293Z",
-      "status": "active",
+      "status": "inactive",
       "id": 10
     },
     {
@@ -110,8 +83,44 @@
       "description": "Tracking manifesting a wonderful life",
       "userId": 1,
       "dateAdded": "2023-02-02T13:36:01.156Z",
-      "status": "active",
+      "status": "inactive",
       "id": 11
+    },
+    {
+      "name": "Hunting",
+      "categoryId": 1,
+      "description": "Tracking my bow hunting practice.",
+      "userId": 3,
+      "dateAdded": "2023-02-02T22:51:09.260Z",
+      "status": "inactive",
+      "id": 12
+    },
+    {
+      "name": "Ram Das Quotes",
+      "categoryId": 1,
+      "description": "I muster up more hope and courage from deep inside me.",
+      "userId": 1,
+      "dateAdded": "2023-02-03T00:30:14.934Z",
+      "status": "active",
+      "id": 13
+    },
+    {
+      "name": "More Rest",
+      "categoryId": 1,
+      "description": "Inner Peace Practice",
+      "userId": 1,
+      "dateAdded": "2023-02-03T00:31:14.643Z",
+      "status": "active",
+      "id": 14
+    },
+    {
+      "name": "I am the greatest hunter PERIOD.",
+      "categoryId": 1,
+      "description": "Deer fear me women adore me. Men wish they were me.",
+      "userId": 3,
+      "dateAdded": "2023-02-03T00:32:42.180Z",
+      "status": "active",
+      "id": 15
     }
   ],
   "comments": [
@@ -163,18 +172,6 @@
       "userComment": "Test Comment",
       "itemId": "5",
       "id": 10
-    },
-    {
-      "userComment": "There is a great reason this is unfolding before me now.",
-      "dateAdded": "2023-02-02T11:54:58.875Z",
-      "itemId": 9,
-      "id": 12
-    },
-    {
-      "userComment": "I may not understand the good in this situation but it is there. Read that again.",
-      "dateAdded": "2023-02-02T12:16:00.293Z",
-      "itemId": 10,
-      "id": 13
     },
     {
       "userComment": "The past has no power over me anymore. I embrace the rhythm and the flowing of my own heart.",
@@ -235,6 +232,36 @@
       "userComment": "I show my family how much I love them in all the verbal and non-verbal ways i can.",
       "itemId": "2",
       "id": 23
+    },
+    {
+      "dateAdded": "2023-02-02T20:22:01.632Z",
+      "userComment": "I can learn new tricks.",
+      "itemId": "8",
+      "id": 24
+    },
+    {
+      "userComment": "I am the greatest hunter that ever lived.",
+      "dateAdded": "Thu Feb 02 2023 17:45:09 GMT-0600 (Central Standard Time)",
+      "itemId": 12,
+      "id": 25
+    },
+    {
+      "userComment": "I draw from my inner strength and light",
+      "dateAdded": "2023-02-03T00:30:14.934Z",
+      "itemId": 13,
+      "id": 26
+    },
+    {
+      "userComment": "I release my mind of thought until the morning.",
+      "dateAdded": "2023-02-03T00:31:14.643Z",
+      "itemId": 14,
+      "id": 27
+    },
+    {
+      "userComment": "Lord its hard to be humble when you're perfect in every way.",
+      "dateAdded": "2023-02-03T00:32:42.180Z",
+      "itemId": 15,
+      "id": 28
     }
   ],
   "categories": [
