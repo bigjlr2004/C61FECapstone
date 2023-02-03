@@ -22,5 +22,12 @@ export const returnDate = (passedDateString) => {
     const month = date.getMonth()
     const day = date.getDate()
     const year = date.getFullYear()
-    return formattedDate = `${month}, ${day}, ${year}`
+    return formattedDate = `${month}-${day}-${year}`
+}
+
+export const sortbyDate = (arr) => {
+    const sorter = (a, b) => {
+        return new Date(b.dateAdded).getTime() - new Date(a.dateAdded).getTime()
+    }
+    return arr.sort(sorter)
 }

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchDelete, standardFetch } from "../../Api_Manager";
+import { StartPage } from "../HomePage/StartPage";
 import { DisplayItems } from "./DisplayItems";
 
 export const ItemContainer = () => {
@@ -51,13 +52,23 @@ export const ItemContainer = () => {
         fetchDelete(`http://localhost:8088/items/${event.target.id}`).then(() => { getAllItems() })
 
     }
-    return (<>
-        {<DisplayItems
-            filteredItems={filteredItems}
-            handleDeleteItem={handleDeleteItem}
-            setSeeAllItems={setSeeAllItems}
-            getAllItems={getAllItems}
 
-        />}
-    </>)
+
+    if (filteredItems.length) {
+        return <>
+            <h1>Welcome lets review the items you are tracking.</h1>
+            <DisplayItems
+                filteredItems={filteredItems}
+                handleDeleteItem={handleDeleteItem}
+                setSeeAllItems={setSeeAllItems}
+                getAllItems={getAllItems}
+
+            />
+        </>
+    } else {
+        return <StartPage />
+    }
+
+
+
 }

@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { elephantPost, fetchDelete, returnDate, standardFetch } from "../../Api_Manager"
 import { EditComment } from "./EditComment"
 
-export const ItemComments = ({ item, itemId }) => {
+export const ItemComments = ({ item, itemId, refreshItem }) => {
     const [itemComments, setItemComments] = useState([])
+    const navigate = useNavigate()
     const [showComment, setShowComment] = useState("false")
     const [editComment, setEditComment] = useState("false")
 
@@ -60,7 +62,9 @@ export const ItemComments = ({ item, itemId }) => {
                         editComment={editComment}
                         setEditComment={setEditComment}
                         item={item}
-                        getComments={getComments} />
+                        getComments={getComments}
+                        refreshItem={refreshItem}
+                    />
                     <button
                         id={comment.id}
                         onClick={(event) => {
@@ -84,6 +88,15 @@ export const ItemComments = ({ item, itemId }) => {
             }}
             className={`${showComment === "false" && item.status === "active" ? "visible" : "invisible"} btn btn-primary`}>
             Add Comment
+        </button>
+        <button
+            type="button"
+            value={"inactive"}
+            onClick={() => {
+                navigate("/homepage")
+            }}
+            className={`btn btn-primary`}>
+            Cancel
         </button>
         <fieldset>
             <div className={`${showComment === "true" ? "visible" : "invisible"}`}>

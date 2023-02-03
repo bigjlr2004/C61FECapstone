@@ -24,7 +24,7 @@ export const HomePage = () => {
 
     return (<>
         <div>
-            <h1>Welcome {user.firstName} lets review the items you are tracking.</h1>
+
             {<ItemContainer />}
         </div>
 

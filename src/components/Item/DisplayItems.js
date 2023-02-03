@@ -1,9 +1,21 @@
+
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { elephantPost, returnDate } from "../../Api_Manager"
+import { returnDate, sortbyDate, standardFetch } from "../../Api_Manager"
 
 export const DisplayItems = ({ filteredItems, handleDeleteItem, setSeeAllItems, getAllItems }) => {
     const navigate = useNavigate()
+    const [allComments, setAllComments] = useState([])
+    const [lastComment, setLastComment] = useState({})
+
+    useEffect(() => {
+        standardFetch(`http://localhost:8088/comments`)
+            .then((data) => {
+                setAllComments(data)
+            })
+    }, [])
+
+
     const handleChangeStatus = (event, obj) => {
         const copy = { ...obj }
         copy.itemId = obj.id
@@ -24,6 +36,14 @@ export const DisplayItems = ({ filteredItems, handleDeleteItem, setSeeAllItems, 
         }).then(() => {
             getAllItems()
         })
+    }
+    const getLastComment = (passedItemId) => {
+        const filteredComments = allComments.filter(comment => parseInt(comment.itemId) === passedItemId)
+        const sortedComments = sortbyDate(filteredComments)
+        let last = (sortedComments[filteredComments.length - 1])
+        return <div>Comment Added: {returnDate(last?.dateAdded)} {last?.userComment} </div>
+
+
     }
 
     return (<>
@@ -53,6 +73,7 @@ export const DisplayItems = ({ filteredItems, handleDeleteItem, setSeeAllItems, 
                         <div className="item-name">Date Started: {returnDate(itemObj.dateAdded)}</div>
                         <div className="item-name">Description: {itemObj.description}</div>
                         <div className="item-name">Item Type: {itemObj?.category?.name}</div>
+                        <div>{getLastComment(itemObj.id)}</div>
                         <button
                             id={itemObj.id}
                             onClick={(event) => {

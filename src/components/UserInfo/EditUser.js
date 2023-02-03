@@ -123,6 +123,14 @@ export const EditUser = () => {
                 className="btn btn-primary">
                 Save Profile
             </button>
+            <button
+                onClick={(event) => {
+                    event.preventDefault()
+                    navigate("/homepage")
+                }}
+                className="btn btn-primary">
+                Cancel
+            </button>
         </form>
     </>)
 }

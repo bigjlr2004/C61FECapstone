@@ -14,19 +14,21 @@ export const EditItem = () => {
         name: "",
         categoryId: "",
         description: "",
-        userId: trackITObject.id,
+        userId: parseInt(trackITObject.id),
         dateAdded: new Date(),
 
     })
 
-
+    const refreshItem = () => {
+        standardFetch(`http://localhost:8088/items/${itemId}?&_expand=category`)
+            .then((data) => {
+                const user = data
+                setItem(data)
+            })
+    }
     useEffect(
         () => {
-            standardFetch(`http://localhost:8088/items/${itemId}?&_expand=category`)
-                .then((data) => {
-                    const user = data
-                    setItem(data)
-                })
+            refreshItem()
         }, [])
 
     const changeItem = (evt) => {
@@ -122,7 +124,10 @@ export const EditItem = () => {
                 className="btn btn-primary">
                 UpdateItem
             </button>
-            <div>{<ItemComments item={item} itemId={itemId} />}</div>
+            <div>{<ItemComments
+                item={item}
+                itemId={itemId}
+                refreshItem={refreshItem} />}</div>
 
         </form>
 

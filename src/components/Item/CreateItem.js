@@ -147,6 +147,13 @@ export const CreateItem = () => {
                 className="btn btn-primary">
                 Create Item
             </button>
+            <button
+                onClick={(event) => {
+                    navigate("/homepage")
+                }}
+                className="btn btn-primary">
+                Cancel
+            </button>
         </form>
 
     </>)

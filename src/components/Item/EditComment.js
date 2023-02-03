@@ -1,9 +1,16 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { standardFetch } from "../../Api_Manager"
 
-export const EditComment = ({ item, comment, editComment, setEditComment, getComments }) => {
+export const EditComment = ({ item, comment, editComment, setEditComment, getComments, refreshItem }) => {
+    const navigate = useNavigate()
+    const [changeComment, setchangeComment] = useState({
+        userComment: "",
+        userId: ""
 
-    const [changeComment, setchangeComment] = useState({})
+    })
+
+
     const handleEditComment = (event) => {
         event.preventDefault()
         setEditComment("true")
@@ -17,7 +24,7 @@ export const EditComment = ({ item, comment, editComment, setEditComment, getCom
     }
 
 
-    const handleCommitEditButton = (event) => {
+    const handleCommitButton = () => {
         fetch(`http://localhost:8088/comments/${comment.id}`, {
             headers: {
                 Accept: "application/json",
@@ -36,6 +43,7 @@ export const EditComment = ({ item, comment, editComment, setEditComment, getCom
             setEditComment("false")
             const commentElement = document.querySelector(`#comment--${changeComment.id}`)
             commentElement.className = "invisible"
+
         })
 
 
@@ -45,7 +53,7 @@ export const EditComment = ({ item, comment, editComment, setEditComment, getCom
         <button
             id={comment.id}
             onClick={(event) => {
-
+                event.preventDefault()
                 handleEditComment(event)
             }}
 
@@ -61,7 +69,8 @@ export const EditComment = ({ item, comment, editComment, setEditComment, getCom
                         className={`form -control`}
                         htmlFor="userComment">Comment:</label>
                     <input
-                        required autoFocus
+
+
                         id="userComment"
                         type="text"
                         className="form-control"
@@ -69,6 +78,7 @@ export const EditComment = ({ item, comment, editComment, setEditComment, getCom
                         value={changeComment.userComment}
                         onChange={
                             (evt) => {
+                                evt.preventDefault()
                                 const copy = { ...changeComment }
                                 copy[evt.target.id] = evt.target.value
                                 setchangeComment(copy)
@@ -80,11 +90,25 @@ export const EditComment = ({ item, comment, editComment, setEditComment, getCom
                 <button
                     id={comment.id}
                     onClick={(event) => {
-                        handleCommitEditButton(event)
+                        event.preventDefault()
+                        handleCommitButton()
                     }}
                     className="btn btn-primary">
                     Commit Edit
                 </button>
+                <button
+                    type="button"
+                    value={"inactive"}
+                    onClick={(event) => {
+                        refreshItem()
+                        const commentElement = document.querySelector(`#comment--${changeComment.id}`)
+                        commentElement.className = "invisible"
+                        setEditComment("false")
+                    }}
+                    className={`btn btn-primary`}>
+                    Cancel
+                </button>
+
             </div>
         </fieldset>
 

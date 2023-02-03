@@ -20,18 +20,30 @@
       "lastName": "Roberts",
       "phoneNumber": "123-123-1234",
       "id": 3
+    },
+    {
+      "email": "sam@s.com",
+      "firstName": "Sam",
+      "lastName": "Stone",
+      "phoneNumber": "800-345-9999",
+      "id": 4
+    },
+    {
+      "email": "toonces@mail.com",
+      "firstName": "Scott",
+      "lastName": "Roberts",
+      "phoneNumber": "999-999-9999",
+      "id": 5
+    },
+    {
+      "email": "frank@f.com",
+      "firstName": "Frank",
+      "lastName": "Stallone",
+      "phoneNumber": "479-234-1509",
+      "id": 6
     }
   ],
   "items": [
-    {
-      "id": 1,
-      "name": "Quit Smoking",
-      "description": "Item to help me quit smoking.",
-      "categoryId": 2,
-      "userId": 1,
-      "dateAdded": "05/17/2021",
-      "status": "inactive"
-    },
     {
       "name": "Fulfilling Work",
       "categoryId": 1,
@@ -121,21 +133,18 @@
       "dateAdded": "2023-02-03T00:32:42.180Z",
       "status": "active",
       "id": 15
+    },
+    {
+      "name": "Bobs your uncle",
+      "categoryId": 1,
+      "description": "Bob is your uncle",
+      "userId": 1,
+      "dateAdded": "2023-02-03T15:47:48.925Z",
+      "status": "active",
+      "id": 16
     }
   ],
   "comments": [
-    {
-      "userComment": "I quit smoking.",
-      "dateAdded": "05/18/2021",
-      "itemId": 1,
-      "id": 1
-    },
-    {
-      "userComment": "You are doing work that you enjoy and find fulfilling.",
-      "dateAdded": "2023-02-01T10:53:35.578Z",
-      "itemId": 3,
-      "id": 3
-    },
     {
       "userComment": "You are doing work that you enjoy and find fulfilling.",
       "dateAdded": "2023-02-01T11:07:22.671Z",
@@ -163,14 +172,14 @@
     {
       "dateAdded": "2023-02-01T22:31:27.898Z",
       "userComment": "New Comment",
-      "itemId": "5",
+      "itemId": 5,
       "description": "w",
       "id": 9
     },
     {
       "dateAdded": "2023-02-01T22:48:02.941Z",
       "userComment": "Test Comment",
-      "itemId": "5",
+      "itemId": 5,
       "id": 10
     },
     {
@@ -180,63 +189,9 @@
       "id": 14
     },
     {
-      "dateAdded": "2023-02-02T14:06:23.403Z",
-      "userComment": "Intentions Matter",
-      "itemId": "3",
-      "id": 15
-    },
-    {
-      "dateAdded": "2023-02-02T14:11:43.005Z",
-      "userComment": "I trust myself to make the best decision for me.",
-      "itemId": "3",
-      "id": 16
-    },
-    {
-      "dateAdded": "2023-02-02T14:14:59.505Z",
-      "userComment": "Trust the process.",
-      "itemId": "3",
-      "id": 17
-    },
-    {
-      "dateAdded": "2023-02-02T14:16:25.633Z",
-      "userComment": "Test test then retest. You got this.",
-      "itemId": "3",
-      "id": 18
-    },
-    {
-      "dateAdded": "2023-02-02T14:29:15.658Z",
-      "userComment": "Testing myself and failing is a sure fire way to gain experience.",
-      "itemId": "3",
-      "id": 19
-    },
-    {
-      "dateAdded": "2023-02-02T14:31:50.473Z",
-      "userComment": "I follow my dreams no matter what.",
-      "itemId": "3",
-      "id": 20
-    },
-    {
-      "dateAdded": "2023-02-02T14:31:50.473Z",
-      "userComment": "I follow my dreams no matter what.",
-      "itemId": "3",
-      "id": 21
-    },
-    {
-      "dateAdded": "2023-02-02T14:42:09.453Z",
-      "userComment": "I have the smarts and the ability to get through this.",
-      "itemId": "3",
-      "id": 22
-    },
-    {
-      "dateAdded": "2023-02-02T15:18:30.567Z",
-      "userComment": "I show my family how much I love them in all the verbal and non-verbal ways i can.",
-      "itemId": "2",
-      "id": 23
-    },
-    {
       "dateAdded": "2023-02-02T20:22:01.632Z",
       "userComment": "I can learn new tricks.",
-      "itemId": "8",
+      "itemId": 8,
       "id": 24
     },
     {
@@ -246,7 +201,7 @@
       "id": 25
     },
     {
-      "userComment": "I draw from my inner strength and light",
+      "userComment": "Not me that's who.",
       "dateAdded": "2023-02-03T00:30:14.934Z",
       "itemId": 13,
       "id": 26
@@ -262,6 +217,18 @@
       "dateAdded": "2023-02-03T00:32:42.180Z",
       "itemId": 15,
       "id": 28
+    },
+    {
+      "userComment": "Test Comment Bob",
+      "dateAdded": "2023-02-03T15:47:48.925Z",
+      "itemId": 16,
+      "id": 29
+    },
+    {
+      "userComment": "Test comment for jeremy's demo",
+      "dateAdded": "2023-02-03T15:48:25.770Z",
+      "itemId": 16,
+      "id": 30
     }
   ],
   "categories": [
