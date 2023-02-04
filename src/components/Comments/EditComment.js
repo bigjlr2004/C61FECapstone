@@ -7,9 +7,7 @@ export const EditComment = ({ item, comment, editComment, setEditComment, getCom
     const [changeComment, setchangeComment] = useState({
         userComment: "",
         userId: ""
-
     })
-
 
     const handleEditComment = (event) => {
         event.preventDefault()
@@ -19,10 +17,8 @@ export const EditComment = ({ item, comment, editComment, setEditComment, getCom
         standardFetch(`http://localhost:8088/comments/${comment.id}`)
             .then((data) => {
                 setchangeComment(data)
-
             })
     }
-
 
     const handleCommitButton = () => {
         fetch(`http://localhost:8088/comments/${comment.id}`, {
@@ -31,21 +27,17 @@ export const EditComment = ({ item, comment, editComment, setEditComment, getCom
                 "Content-Type": "application/json"
             },
             method: "PATCH",
-
             // Sending only the fields that need to be updated
             body: JSON.stringify({
                 userComment: `${changeComment.userComment}`,
                 dateAdded: `${changeComment.dateAdded}`
-
             })
         }).then(() => {
             getComments()
             setEditComment("false")
             const commentElement = document.querySelector(`#comment--${changeComment.id}`)
             commentElement.className = "invisible"
-
         })
-
 
     }
     return <>
@@ -56,7 +48,6 @@ export const EditComment = ({ item, comment, editComment, setEditComment, getCom
                 event.preventDefault()
                 handleEditComment(event)
             }}
-
             className={`${editComment === "false" && item.status === "active" ? "visible" : "invisible"} btn btn-primary`}>
             Edit Comment
         </button>
@@ -69,8 +60,6 @@ export const EditComment = ({ item, comment, editComment, setEditComment, getCom
                         className={`form -control`}
                         htmlFor="userComment">Comment:</label>
                     <input
-
-
                         id="userComment"
                         type="text"
                         className="form-control"
@@ -86,7 +75,6 @@ export const EditComment = ({ item, comment, editComment, setEditComment, getCom
                         autoComplete="off"
                     />
                 </div>
-
                 <button
                     id={comment.id}
                     onClick={(event) => {
@@ -108,7 +96,6 @@ export const EditComment = ({ item, comment, editComment, setEditComment, getCom
                     className={`btn btn-primary`}>
                     Cancel
                 </button>
-
             </div>
         </fieldset>
 

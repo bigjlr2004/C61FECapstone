@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 import { elephantPost, fetchDelete, returnDate, standardFetch } from "../../Api_Manager"
 import { EditComment } from "./EditComment"
 
+
 export const ItemComments = ({ item, itemId, refreshItem }) => {
     const [itemComments, setItemComments] = useState([])
     const navigate = useNavigate()
@@ -78,7 +79,6 @@ export const ItemComments = ({ item, itemId, refreshItem }) => {
         </>
     }
 
-
     return (<>
         <button
             id={itemId}
@@ -129,10 +129,5 @@ export const ItemComments = ({ item, itemId, refreshItem }) => {
         <div className="items-container">
             {listComments(itemComments)}
         </div>
-
-
-
-
-
     </>)
 }

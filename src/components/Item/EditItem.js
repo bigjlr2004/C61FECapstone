@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom";
 import { elephantPost, standardFetch } from "../../Api_Manager";
 import { Categories } from "../Categories/Categories";
-import { ItemComments } from "./ItemComments";
+import { ItemComments } from "../Comments/ItemComments";
 
 export const EditItem = () => {
 
@@ -16,7 +16,6 @@ export const EditItem = () => {
         description: "",
         userId: parseInt(trackITObject.id),
         dateAdded: new Date(),
-
     })
 
     const refreshItem = () => {
@@ -47,14 +46,9 @@ export const EditItem = () => {
             elephantPost(`http://localhost:8088/items/${itemId}`, item, "PUT")
                 .then(() => {
                     setFeedback("Item successfully saved")
-
                 })
-
         }
     }
-
-
-
     const [feedback, setFeedback] = useState("")
     useEffect(() => {
         if (feedback !== "") {

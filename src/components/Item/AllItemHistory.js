@@ -13,8 +13,6 @@ export const AllItemsHistory = () => {
             .then((data) => {
                 return setItemHistory((data))
             })
-
-
     }
     useEffect(() => {
 
@@ -29,11 +27,7 @@ export const AllItemsHistory = () => {
     const handleDeleteItem = (event) => {
 
         fetchDelete(`http://localhost:8088/items/${event.target.id}`).then(() => { getAllItems() })
-
-
     }
-
-
     return (<>
         <table>
             <thead>
@@ -45,9 +39,6 @@ export const AllItemsHistory = () => {
                     <th>RemoveItem</th>
                 </tr>
             </thead>
-
-
-
             {sortedHistory.map((itemObj) => {
                 return <tbody className="item-history" key={itemObj.id}><tr>
                     <td>{itemObj.name}</td>
