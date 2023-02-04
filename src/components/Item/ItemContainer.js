@@ -14,6 +14,7 @@ export const ItemContainer = () => {
     const [seeAllItems, setSeeAllItems] = useState("")
 
 
+
     const getAllItems = () => {
         standardFetch(`http://localhost:8088/items/?userId=${trackITObject.id}&_expand=category`)
             .then((data) => {
@@ -21,6 +22,10 @@ export const ItemContainer = () => {
             })
     }
 
+    useEffect(
+        () => {
+            getAllItems()
+        }, [])
 
     useEffect(
         () => {
@@ -34,10 +39,6 @@ export const ItemContainer = () => {
             }
         }, [seeAllItems])
 
-    useEffect(
-        () => {
-            getAllItems()
-        }, [])
 
     useEffect(
         () => {
@@ -62,6 +63,7 @@ export const ItemContainer = () => {
                 handleDeleteItem={handleDeleteItem}
                 setSeeAllItems={setSeeAllItems}
                 getAllItems={getAllItems}
+
 
             />
         </>
