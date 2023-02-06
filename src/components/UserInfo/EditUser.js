@@ -8,10 +8,11 @@ export const EditUser = () => {
     const trackITObject = JSON.parse(localTrackITUser);
     const navigate = useNavigate()
     const [user, updateUser] = useState({
-        id: " ",
-        firstName: " ",
-        lastName: " ",
-        email: " "
+        id: "",
+        firstName: "",
+        lastName: "",
+        email: "",
+        phoneNumber: ""
     })
 
     useEffect(
