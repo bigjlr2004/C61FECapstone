@@ -32,7 +32,7 @@ export const sortbyDate = (arr) => {
     return arr.sort(sorter)
 }
 
-export const updateOnChange = ({ evt, stateVar, setStateFunc }) => {
+export const updateOnChange = (evt, stateVar, setStateFunc) => {
     const copy = { ...stateVar }
     copy[evt.target.id] = evt.target.value
     setStateFunc(copy)
