@@ -46,8 +46,7 @@ export const ItemContainer = () => {
 
     if (filteredItems.length) {
         return <>
-            <h1 className="title--main">TrackIT Application</h1>
-            <div>Your journey of 100 miles begins with the first step.</div>
+
             <DisplayItems
                 filteredItems={filteredItems}
                 setSeeAllItems={setSeeAllItems}
