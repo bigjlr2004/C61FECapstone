@@ -2,23 +2,25 @@ import { Link, useNavigate } from "react-router-dom"
 
 export const StartPage = () => {
     const navigate = useNavigate()
+    const localTrackITUser = localStorage.getItem("trackIT_user")
+    const trackITObject = JSON.parse(localTrackITUser);
     return <>
-        <h1>Welcome</h1>
+        <h1>Welcome {trackITObject.firstName}</h1>
         <div className="instruction_paragraph">
-            <ul>
-                <li>Have you ever wished there was something in your life you could change? Maybe you want to lose weight, spend more time with your loved ones, start reading, or stop smoking.</li>
-                <li> Whatever you want to change, the TrackIT app can help you to achieve it.</li>
-                <li>People are more likely to Accomplish things in life  when they are clearly defined. TrackIT not only allows its users to define goals but the app provides an easy to use interface to track progress on these goals.</li>
-                <li>When you have used TrackIT to clearly define what it is that you want to accomplish, and started tracking your progress towards achieving it in the TrackIT APP, there is nothing that will stand between you and your goals.</li>
-            </ul>
-
-            <p>
+            <ol>
+                <p>Have you ever wished there was something in your life you could change? Maybe you want to lose weight, spend more time with your loved ones, start reading, or stop smoking.
+                    Whatever you want to change, the TrackIT app can help you to achieve it. People are more likely to Accomplish things in life  when they are clearly defined.
+                    When you have clearly define what it is that you want to accomplish and then started tracking your progress towards achieving it there is nothing that will stand between you and your goals.</p>
 
 
+                <p>Instructions</p>
+                <li>First you need you need to click the Start button below.</li>
+                <li>This is going to take you to a create new iem screen. </li>
+                <li>Here you will fill in the name of the item, a </li>
+            </ol>
 
-            </p>
         </div>
-        <h1>Shall we get Started ?</h1>
+        <h1>What are you waiting for {trackITObject.firstName}, lets get started ?</h1>
         <button
             onClick={(event) => {
                 navigate("/new_item")

@@ -2,7 +2,7 @@
   "users": [
     {
       "id": 1,
-      "firstName": "John ",
+      "firstName": "John",
       "lastName": "Roberts",
       "email": "john@john.com",
       "phoneNumber": "479-234-1234"
@@ -48,6 +48,20 @@
       "lastName": "Claus",
       "phoneNumber": "899-234-7689",
       "id": 7
+    },
+    {
+      "email": "sam@d.com",
+      "firstName": "Sam",
+      "lastName": "Davis",
+      "phoneNumber": "345-456-5678",
+      "id": 8
+    },
+    {
+      "email": "val@v.com",
+      "firstName": "Val",
+      "lastName": "Freeman",
+      "phoneNumber": "123-123-1234",
+      "id": 9
     }
   ],
   "items": [
@@ -137,19 +151,6 @@
       "id": 15
     },
     {
-      "name": "Feeling really good about movin gcode around",
-      "categoryId": 3,
-      "description": "This has been such an awesome  adventure",
-      "userId": 1,
-      "dateAdded": "2023-02-03T19:55:04.767Z",
-      "status": "active",
-      "id": 17,
-      "category": {
-        "id": 1,
-        "name": "Start"
-      }
-    },
-    {
       "name": "I need more time off",
       "categoryId": 1,
       "description": "Need more time off.",
@@ -157,6 +158,28 @@
       "dateAdded": "2023-02-03T20:16:29.033Z",
       "status": "active",
       "id": 18
+    },
+    {
+      "name": "Start Feeling Better Now",
+      "categoryId": 3,
+      "description": "I have as much brightness to offer the world as the next person.",
+      "userId": 9,
+      "dateAdded": "2023-02-06T16:27:25.664Z",
+      "status": "active",
+      "id": 19,
+      "category": {
+        "id": 1,
+        "name": "Start"
+      }
+    },
+    {
+      "name": "Jeremy is the greatest",
+      "categoryId": 2,
+      "description": "I kindly ask for help and guidance if I cannot see a better way.",
+      "userId": 2,
+      "dateAdded": "2023-02-06T17:41:22.532Z",
+      "status": "active",
+      "id": 20
     }
   ],
   "comments": [
@@ -232,12 +255,6 @@
       "dateAdded": "2023-02-03T00:32:42.180Z",
       "itemId": 15,
       "id": 28
-    },
-    {
-      "userComment": "I am deeply fulfilled with who I am..",
-      "dateAdded": "2023-02-03T19:55:04.767Z",
-      "itemId": 17,
-      "id": 31
     },
     {
       "dateAdded": "2023-02-03T20:00:07.839Z",
@@ -330,12 +347,6 @@
       "id": 48
     },
     {
-      "dateAdded": "2023-02-04T00:48:20.237Z",
-      "userComment": "Test new coment",
-      "itemId": "17",
-      "id": 49
-    },
-    {
       "userComment": "test submisson",
       "itemId": 14,
       "dateAdded": "2023-02-04T00:53:19.206Z",
@@ -414,64 +425,34 @@
       "id": 62
     },
     {
-      "userComment": "I feel good about this one.",
-      "itemId": 17,
-      "dateAdded": "2023-02-04T16:08:57.242Z",
-      "id": 63
+      "userComment": "I surround myself with people who treat me well.",
+      "dateAdded": "2023-02-06T16:27:25.664Z",
+      "itemId": 19,
+      "id": 73
     },
     {
-      "userComment": "Interesting.",
-      "itemId": 17,
-      "dateAdded": "2023-02-04T16:10:49.390Z",
-      "id": 64
+      "userComment": "Val was is always so nice",
+      "itemId": 19,
+      "dateAdded": "2023-02-06T16:30:09.933Z",
+      "id": 74
     },
     {
-      "userComment": "Maybe",
-      "itemId": 17,
-      "dateAdded": "2023-02-04T16:11:52.454Z",
-      "id": 65
+      "dateAdded": "2023-02-06T16:31:05.176Z",
+      "userComment": "Test comment.",
+      "itemId": "19",
+      "id": 75
     },
     {
-      "userComment": "this wil work some day",
-      "itemId": 17,
-      "dateAdded": "2023-02-04T16:16:28.598Z",
-      "id": 66
+      "userComment": "My friends do not judge me, nor do they influence what I do with my life.",
+      "dateAdded": "2023-02-06T17:41:22.532Z",
+      "itemId": 20,
+      "id": 76
     },
     {
-      "userComment": "this one",
-      "itemId": 17,
-      "dateAdded": "2023-02-04T16:19:19.445Z",
-      "id": 67
-    },
-    {
-      "userComment": "updated comments",
-      "itemId": 17,
-      "dateAdded": "2023-02-04T16:19:36.984Z",
-      "id": 68
-    },
-    {
-      "userComment": "Test Test Test and Retest",
-      "itemId": 17,
-      "dateAdded": "2023-02-04T16:21:21.566Z",
-      "id": 69
-    },
-    {
-      "userComment": "Try it this way",
-      "itemId": 17,
-      "dateAdded": "2023-02-04T16:23:39.408Z",
-      "id": 70
-    },
-    {
-      "userComment": "Test new layout",
-      "itemId": 17,
-      "dateAdded": "2023-02-04T17:39:45.912Z",
-      "id": 71
-    },
-    {
-      "userComment": "Test more refactoring",
-      "itemId": 17,
-      "dateAdded": "2023-02-04T17:50:05.520Z",
-      "id": 72
+      "userComment": "add comment.",
+      "itemId": 20,
+      "dateAdded": "2023-02-06T17:42:30.181Z",
+      "id": 77
     }
   ],
   "categories": [

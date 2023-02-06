@@ -8,11 +8,12 @@ export const EditUser = () => {
     const trackITObject = JSON.parse(localTrackITUser);
     const navigate = useNavigate()
     const [user, updateUser] = useState({
-        id: "",
-        firstName: "",
-        lastName: "",
-        email: ""
+        id: " ",
+        firstName: " ",
+        lastName: " ",
+        email: " "
     })
+
     useEffect(
         () => {
             standardFetch(`http://localhost:8088/users/${trackITObject.id}`)
@@ -20,6 +21,7 @@ export const EditUser = () => {
                     const user = data
                     updateUser(user)
                 })
+
         }, [])
     const [feedback, setFeedback] = useState("")
 
@@ -42,6 +44,7 @@ export const EditUser = () => {
                 setFeedback("User profile successfully saved")
 
             })
+
     }
     const changeUser = (evt) => {
         evt.preventDefault()
@@ -75,7 +78,7 @@ export const EditUser = () => {
                 <div className="form-group">
                     <label htmlFor="lastName">Last Name:</label>
                     <input
-                        required autoFocus
+                        required
                         type="text"
                         className="form-control"
                         value={user.lastName}
