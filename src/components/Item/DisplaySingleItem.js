@@ -35,41 +35,28 @@ export const DisplaySingleItem = ({ filteredItems, getAllItems }) => {
     return (<>
         {filteredItems.map((itemObj) => {
             return (
-                <div className="item-card" key={itemObj.id}>
-                    <div className="item-name">Item: {itemObj.name}</div>
-                    <div className="item-name">Status: {itemObj.status}</div>
-                    <div className="item-name">Date Started: {returnDate(itemObj.dateAdded)}</div>
-                    <div className="item-name">Description: {itemObj.description}</div>
-                    <div className="item-name">Item Type: {itemObj?.category?.name}</div>
-                    <HomeScreenComment itemObj={itemObj} />
-                    <button
-                        id={itemObj.id}
-                        onClick={(event) => {
-                            handleDeleteItem(event)
-                        }}
-                        className="btn btn-primary">
-                        Delete Item
-                    </button>
-                    <button
-                        id={itemObj.id}
-                        onClick={(event) => {
-                            navigate(`/items/${itemObj.id}/edit`)
-                        }}
-                        className="btn btn-primary">
-                        Edit Item
-                    </button>
-                    <button
-                        id={itemObj.id}
-                        value={"inactive"}
-                        onClick={(event) => {
-                            handleChangeStatus(event, itemObj)
-                        }}
-                        className={`${itemObj.status === "inactive" ? "invisible" : "visible"} btn btn-primary`}>
-                        Retire Item
-                    </button>
+                <div className="card " key={itemObj.id}>
+                    <div className="card-header">
+                        Status: Something Really Cool Will go here
+                    </div>
+                    <div className="card-body">
 
+                        <h5 className="card-title">{itemObj.name}</h5>
+                        <p className="card-text">Description: {itemObj.description}</p>
+                        <div>Item Type: {itemObj?.category?.name}</div>
+                        <div className="card-text">DateStarted: {returnDate(itemObj.dateAdded)}</div>
+                        <div>Status: {itemObj.status}</div>
 
+                        <HomeScreenComment itemObj={itemObj}
+                            handleChangeStatus={handleChangeStatus}
+                            handleDeleteItem={handleDeleteItem} />
+
+                    </div>
+                    <div className="card-footer text-muted">
+                        Stretch Goal for how long ago you updated Item.
+                    </div>
                 </div>
+
 
             )
         })}

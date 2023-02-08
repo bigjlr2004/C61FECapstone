@@ -8,10 +8,17 @@ button,
 input,
 select,
 textarea {
-  color: #404040;
+  background-color: #404040;
+  color: white;
   font-family: "Comfortaa", Arial, sans-serif;
   font-size: 14px;
   line-height: 1.5;
+  width: 1000px;
+  margin: auto;
+}
+
+.card {
+  color:black;
 }
 
 body {
@@ -41,7 +48,7 @@ p {
   height: 35px;
   font-size: 14px;
   font-family: "Comfortaa", Arial, sans-serif;
-  color: #404040;
+   width: 400px;
 }
 
 /* feedback styling*/
@@ -131,6 +138,7 @@ p {
 .start_button {
   width: 300px;
   height: 150px;
+  background-color: #0d6efd;
 
   font-size: 35px;
 }
@@ -142,7 +150,7 @@ p {
 
 .history-name {
   margin: 5px;
-  flex: 0 0 20%;
+  
 }
 
 table,
@@ -153,6 +161,26 @@ td {
 }
 
 table {
-  width: 75%;
+  
   border-collapse: collapse;
+}
+
+.bottom-Buttons {
+  display: flex;
+  width: 800px;
+
+
+
+  
+}
+.btn {
+  width: fit-content;
+  margin: 10px;
+}
+
+.fire {
+  width: 100px;
+}
+.table-color {
+background-color: white;
 }

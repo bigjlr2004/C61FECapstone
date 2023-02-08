@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { standardFetch } from "../../Api_Manager"
+import { fetchDelete, standardFetch } from "../../Api_Manager"
 
 export const EditComment = ({ item, comment, editComment, setEditComment, getComments, refreshItem }) => {
     const navigate = useNavigate()
@@ -40,18 +40,32 @@ export const EditComment = ({ item, comment, editComment, setEditComment, getCom
         })
 
     }
+    const handleDeleteComment = (event) => {
+        fetchDelete(`http://localhost:8088/comments/${event.target.id}`).then(() => { getComments() })
+
+    }
+
+
     return <>
-
-        <button
-            id={comment.id}
-            onClick={(event) => {
-                event.preventDefault()
-                handleEditComment(event)
-            }}
-            className={`${editComment === "false" && item.status === "active" ? "visible" : "invisible"} btn btn-primary`}>
-            Edit Comment
-        </button>
-
+        <div className="bottom-Buttons">
+            <button
+                id={comment.id}
+                onClick={(event) => {
+                    event.preventDefault()
+                    handleEditComment(event)
+                }}
+                className={`${editComment === "false" && item.status === "active" ? "visible" : "invisible"} btn btn-primary`}>
+                Edit Comment
+            </button>
+            <button
+                id={comment.id}
+                onClick={(event) => {
+                    handleDeleteComment(event)
+                }}
+                className={`${editComment === "false" ? "visible" : "invisible"} btn btn-primary`}>
+                Delete
+            </button>
+        </div>
         <fieldset>
             <div id={`comment--${comment.id}`}
                 className="invisible">
@@ -62,7 +76,7 @@ export const EditComment = ({ item, comment, editComment, setEditComment, getCom
                     <input
                         id="userComment"
                         type="text"
-                        className="form-control"
+                        className="card-header"
                         placeholder="Enter you new comment here."
                         value={changeComment.userComment}
                         onChange={

@@ -70,10 +70,10 @@ export const CreateItem = () => {
         <div className={`${feedback.includes("Error") ? "error" : "feedback"} ${feedback === "" ? "invisible" : "visible"}`}>
             {feedback}
         </div>
-        <form className="ticketForm">
+        <form className="card">
             <h2 className="ticketForm__title">New TrackIT Item</h2>
             <fieldset>
-                <div className="form-group">
+                <div className="card-header">
                     <label htmlFor="name">Name:</label>
                     <input
                         required autoFocus
@@ -88,7 +88,7 @@ export const CreateItem = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
+                <div className="card-header">
                     <label htmlFor="name">Description:</label>
                     <input
                         required autoFocus
@@ -105,7 +105,7 @@ export const CreateItem = () => {
             <fieldset>
                 <div id="category-selector">
                     <select
-                        className="type-box"
+                        className="type-box card-header"
                         value={newItem.categoryId}
                         id="category"
                         onChange={(event) => {
@@ -121,7 +121,7 @@ export const CreateItem = () => {
 
             </fieldset>
             <fieldset>
-                <div className="form-group">
+                <div className="card-header">
                     <label htmlFor="description">Comment:</label>
                     <input
                         required autoFocus
@@ -140,22 +140,25 @@ export const CreateItem = () => {
                     />
                 </div>
             </fieldset>
-            <button
-                onClick={(event) => {
-                    handleAddNewItem(event)
-                }}
-                className="btn btn-primary">
-                Create Item
-            </button>
-            <button
-                onClick={(event) => {
-                    event.preventDefault()
-                    navigate("/homepage")
-                }}
-                className="btn btn-primary">
-                Cancel
-            </button>
+            <div className="bottom-Buttons">
+                <button
+                    onClick={(event) => {
+                        handleAddNewItem(event)
+                    }}
+                    className="btn btn-primary">
+                    Create Item
+                </button>
+                <button
+                    onClick={(event) => {
+                        event.preventDefault()
+                        navigate("/homepage")
+                    }}
+                    className="btn btn-primary">
+                    Cancel
+                </button>
+            </div>
         </form>
+
 
     </>)
 }

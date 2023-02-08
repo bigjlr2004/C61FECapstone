@@ -19,7 +19,7 @@ export const fetchDelete = (api) => {
 export const returnDate = (passedDateString) => {
     let formattedDate = ""
     const date = new Date(passedDateString)
-    const month = date.getMonth()
+    const month = date.getMonth() + 1
     const day = date.getDate()
     const year = date.getFullYear()
     return formattedDate = `${month}-${day}-${year}`

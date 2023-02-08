@@ -10,6 +10,7 @@ export const EditItem = () => {
     const trackITObject = JSON.parse(localTrackITUser);
     const navigate = useNavigate()
     const { itemId } = useParams()
+
     const [item, setItem] = useState({
         name: "",
         categoryId: "",
@@ -35,7 +36,6 @@ export const EditItem = () => {
         copy[evt.target.id] = evt.target.value
         setItem(copy)
     }
-
     const handleUpdateItem = (event) => {
         event.preventDefault()
         if (
@@ -61,10 +61,10 @@ export const EditItem = () => {
         <div className={`${feedback.includes("Error") ? "error" : "feedback"} ${feedback === "" ? "invisible" : "visible"}`}>
             {feedback}
         </div>
-        <form className="ticketForm">
-            <h2 className="ticketForm__title">Edit TrackIT Item</h2>
+        <form className="card">
+            <h4 className="ticketForm__title">Edit TrackIT Item</h4>
             <fieldset>
-                <div className="form-group">
+                <div className="card-header">
                     <label htmlFor="name">Name:</label>
                     <input
                         required autoFocus
@@ -79,10 +79,10 @@ export const EditItem = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
+                <div className="card-header">
                     <label htmlFor="name">Description:</label>
                     <input
-                        required autoFocus
+                        required
                         id="description"
                         type="text"
                         className="form-control"
@@ -96,7 +96,7 @@ export const EditItem = () => {
             <fieldset>
                 <div id="category-selector">
                     <select
-                        className="type-box"
+                        className="type-box card-header"
                         value={item.categoryId}
                         id="category"
                         onChange={(event) => {
@@ -109,19 +109,14 @@ export const EditItem = () => {
                         {<Categories />}
                     </select>
                 </div>
-
             </fieldset>
-            <button
-                onClick={(event) => {
-                    handleUpdateItem(event)
-                }}
-                className="btn btn-primary">
-                UpdateItem
-            </button>
+
             <div>{<ItemComments
                 item={item}
                 itemId={itemId}
-                refreshItem={refreshItem} />}</div>
+                refreshItem={refreshItem}
+                handleUpdateItem={handleUpdateItem}
+            />}</div>
 
         </form>
 
