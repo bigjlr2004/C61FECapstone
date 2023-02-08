@@ -31,9 +31,9 @@ export const Login = () => {
     }
 
     return (
-        <main className="container--login">
+        <>
             <section>
-                <form className="form--login" onSubmit={handleLogin}>
+                <form className="card-header" onSubmit={handleLogin}>
                     <h1>TrackIt Application</h1>
                     <h2>Please sign in.... Your future self will thank you.</h2>
                     <fieldset>
@@ -45,17 +45,26 @@ export const Login = () => {
                             placeholder="Email address"
                             required autoFocus />
                     </fieldset>
+
                     <fieldset>
-                        <button type="submit">
-                            Sign in
-                        </button>
+                        <div className="bottom-Button">
+                            <button type="submit"
+                                className="btn btn-primary">
+                                Sign in
+                            </button>
+                            <a className="btn btn-primary"
+                                href="/register"
+                            >Not a member yet?
+                            </a>
+                        </div>
                     </fieldset>
+
+
+
                 </form>
             </section>
-            <section className="link--register">
-                <Link to="/register">Not a member yet?</Link>
-            </section>
-        </main>
+
+        </>
     )
 }
 

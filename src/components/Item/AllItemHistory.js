@@ -29,34 +29,38 @@ export const AllItemsHistory = () => {
         fetchDelete(`http://localhost:8088/items/${event.target.id}`).then(() => { getAllItems() })
     }
     return (<>
-        <table>
-            <thead>
-                <tr>
-                    <th>Item</th>
-                    <th>Status</th>
-                    <th>Date Started</th>
-                    <th>Item Type</th>
-                    <th>RemoveItem</th>
-                </tr>
-            </thead>
-            {sortedHistory.map((itemObj) => {
-                return <tbody className="item-history" key={itemObj.id}><tr>
-                    <td>{itemObj.name}</td>
-                    <td>{itemObj.status}</td>
-                    <td>{returnDate(itemObj.dateAdded)}</td>
-                    <td>{itemObj?.category?.name}</td>
-                    <td ><button
-                        id={itemObj.id}
-                        onClick={(event) => {
-                            handleDeleteItem(event)
-                        }}
-                        className="btn btn-primary">
-                        Delete Item
-                    </button></td>
-                </tr>
-                </tbody>
-            })}
-        </table>
+        <div className="table-color">
+
+            <table className="table table-striped-columns">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Status</th>
+                        <th>Date Started</th>
+                        <th>Item Type</th>
+                        <th>RemoveItem</th>
+                    </tr>
+                </thead>
+                {sortedHistory.map((itemObj) => {
+                    return <tbody className="item-history" key={itemObj.id}><tr>
+                        <td>{itemObj.name}</td>
+                        <td>{itemObj.status}</td>
+                        <td>{returnDate(itemObj.dateAdded)}</td>
+                        <td>{itemObj?.category?.name}</td>
+                        <td ><button
+                            id={itemObj.id}
+                            onClick={(event) => {
+                                handleDeleteItem(event)
+                            }}
+                            className="btn btn-primary">
+                            Delete Item
+                        </button></td>
+                    </tr>
+                    </tbody>
+                })}
+            </table>
+
+        </div>
     </>
     )
 }

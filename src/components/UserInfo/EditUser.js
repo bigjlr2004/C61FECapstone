@@ -58,10 +58,10 @@ export const EditUser = () => {
         <div className={`${feedback.includes("Error") ? "error" : "feedback"} ${feedback === "" ? "invisible" : "visible"}`}>
             {feedback}
         </div>
-        <form className="profile">
+        <form className="card">
             <h2 className="profile__title">User Information</h2>
             <fieldset>
-                <div className="form-group">
+                <div className="card-header">
                     <label htmlFor="firstName">First Name:</label>
                     <input
                         required autoFocus
@@ -76,7 +76,7 @@ export const EditUser = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
+                <div className="card-header">
                     <label htmlFor="lastName">Last Name:</label>
                     <input
                         required
@@ -94,7 +94,7 @@ export const EditUser = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
+                <div className="card-header">
                     <label htmlFor="email">Email Address:</label>
                     <input type="text"
                         className="form-control"
@@ -110,7 +110,7 @@ export const EditUser = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
+                <div className="card-header">
                     <label htmlFor="phoneNumber">Phone Number:</label>
                     <input type="text"
                         className="form-control"
@@ -125,19 +125,21 @@ export const EditUser = () => {
                         } />
                 </div>
             </fieldset>
-            <button
-                onClick={(clickEvent) => { handleSaveButtonClick(clickEvent) }}
-                className="btn btn-primary">
-                Save Profile
-            </button>
-            <button
-                onClick={(event) => {
-                    event.preventDefault()
-                    navigate("/homepage")
-                }}
-                className="btn btn-primary">
-                Cancel
-            </button>
+            <div className="bottom-Buttons">
+                <button
+                    onClick={(clickEvent) => { handleSaveButtonClick(clickEvent) }}
+                    className="btn btn-primary">
+                    Save Profile
+                </button>
+                <button
+                    onClick={(event) => {
+                        event.preventDefault()
+                        navigate("/homepage")
+                    }}
+                    className="btn btn-primary">
+                    Cancel
+                </button>
+            </div>
         </form>
     </>)
 }

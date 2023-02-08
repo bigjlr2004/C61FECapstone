@@ -54,35 +54,47 @@ export const Register = (props) => {
     }
 
     return (
-        <main style={{ textAlign: "center" }}>
-            <form className="form--login" onSubmit={handleRegister}>
+        <main>
+            <form className="card" onSubmit={handleRegister}>
                 <h1 className="h3 mb-3 font-weight-normal">Please Register for the TrackIT Application</h1>
                 <fieldset>
-                    <label htmlFor="firstName"> First Name </label>
-                    <input onChange={updateUser}
-                        type="text" id="firstName" className="form-control"
-                        placeholder="Enter your  First Name" required autoFocus />
+                    <div className="card-header">
+                        <label htmlFor="firstName"> First Name </label>
+                        <input onChange={updateUser}
+                            type="text" id="firstName" className="form-control"
+                            placeholder="Enter your  First Name" required autoFocus />
+                    </div>
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="lastName"> Last Name </label>
-                    <input onChange={updateUser}
-                        type="text" id="lastName" className="form-control"
-                        placeholder="Enter your Last Name" required autoFocus />
+                    <div className="card-header">
+                        <label htmlFor="lastName"> Last Name </label>
+                        <input onChange={updateUser}
+                            type="text" id="lastName" className="form-control"
+                            placeholder="Enter your Last Name" required autoFocus />
+                    </div>
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="email"> Email address </label>
-                    <input onChange={updateUser}
-                        type="email" id="email" className="form-control"
-                        placeholder="Email address" required />
+                    <div className="card-header">
+                        <label htmlFor="email"> Email address </label>
+                        <input onChange={updateUser}
+                            type="email" id="email" className="form-control"
+                            placeholder="Email address" required />
+                    </div>
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="phoneNumber"> Phone Number </label>
-                    <input onChange={updateUser}
-                        type="tel" id="phoneNumber" className="form-control"
-                        placeholder="Phone Number" required />
+                    <div className="card-header">
+                        <label htmlFor="phoneNumber"> Phone Number </label>
+                        <input onChange={updateUser}
+                            type="tel" id="phoneNumber" className="form-control"
+                            placeholder="Phone Number" required />
+                    </div>
                 </fieldset>
                 <fieldset>
-                    <button type="submit"> Register </button>
+                    <div className="card-header">
+                        <button
+                            className="btn-primary btn"
+                            type="submit"> Register </button>
+                    </div>
                 </fieldset>
             </form>
         </main>

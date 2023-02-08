@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { elephantPost, fetchDelete, returnDate, standardFetch } from "../../Api_Manager"
-import { EditComment } from "./EditComment"
+import { elephantPost, standardFetch } from "../../Api_Manager"
+import { ListComments } from "./ListComments"
 
 
-export const ItemComments = ({ item, itemId, refreshItem }) => {
+export const ItemComments = ({ item, itemId, refreshItem, handleUpdateItem }) => {
     const [itemComments, setItemComments] = useState([])
     const navigate = useNavigate()
     const [showComment, setShowComment] = useState("false")
-    const [editComment, setEditComment] = useState("false")
+
 
     const [newComment, setNewComment] = useState({
         dateAdded: new Date(),
@@ -48,58 +48,43 @@ export const ItemComments = ({ item, itemId, refreshItem }) => {
         copy[evt.target.id] = evt.target.value
         setNewComment(copy)
     }
-    const handleDeleteComment = (event) => {
-        fetchDelete(`http://localhost:8088/comments/${event.target.id}`).then(() => { getComments() })
 
-    }
-    const listComments = (itemComments) => {
-        return <>
-            {itemComments.map((comment) => {
-                return <div className="item-card" key={comment.id}>
-                    <div className="item-name">Comment: {comment.userComment}</div>
-                    <div className="item-name">Date Added: {returnDate(comment.dateAdded)}</div>
-                    <EditComment
-                        comment={comment}
-                        editComment={editComment}
-                        setEditComment={setEditComment}
-                        item={item}
-                        getComments={getComments}
-                        refreshItem={refreshItem}
-                    />
-                    <button
-                        id={comment.id}
-                        onClick={(event) => {
-                            handleDeleteComment(event)
-                        }}
-                        className={`${editComment === "false" ? "visible" : "invisible"} btn btn-primary`}>
-                        Delete
-                    </button>
-                </div>
-            })}
-        </>
-    }
+
 
     return (<>
-        <button
-            id={itemId}
-            onClick={(event) => {
-                event.preventDefault()
-                setShowComment("true")
-            }}
-            className={`${showComment === "false" && item.status === "active" ? "visible" : "invisible"} btn btn-primary`}>
-            Add Comment
-        </button>
-        <button
-            type="button"
-            value={"inactive"}
-            onClick={() => {
-                navigate("/homepage")
-            }}
-            className={`btn btn-primary`}>
-            Cancel
-        </button>
-        <fieldset>
-            <div className={`${showComment === "true" ? "visible" : "invisible"}`}>
+        <span className={`${item.status === "inactive" || showComment === "true" ? "invisible" : "visible"}`}>
+            <div className="bottom-Buttons">
+                <button
+                    id={itemId}
+                    onClick={(event) => {
+                        event.preventDefault()
+                        setShowComment("true")
+                    }}
+                    className={`${showComment === "false" && item.status === "active" ? "visible" : "invisible"} btn btn-primary`}>
+                    Add Comment
+                </button>
+                <button
+                    onClick={(event) => {
+                        handleUpdateItem(event)
+                    }}
+                    className="btn btn-primary">
+                    Update Item
+                </button>
+                <button
+                    type="button"
+                    value={"inactive"}
+                    onClick={() => {
+                        navigate("/homepage")
+                    }}
+                    className={`btn btn-primary`}>
+                    Cancel
+                </button>
+            </div>
+        </span>
+
+        <span className={`${item.status === "inactive" || showComment === "true" ? "visible" : "invisible"}`}>
+            <fieldset>
+
                 <div className="form-group">
                     <label
                         className={`form - control`}
@@ -115,19 +100,39 @@ export const ItemComments = ({ item, itemId, refreshItem }) => {
                         autoComplete="off"
                     />
                 </div>
+                <div className="bottom-Buttons">
+                    <button
+                        type="button"
+                        value={"inactive"}
+                        onClick={() => {
+                            setShowComment("false")
+                        }}
+                        className={`btn btn-primary`}>
+                        Cancel
+                    </button>
+                    <div className="bottom-Buttons">
+                        <button
+                            id={itemId}
+                            onClick={(event) => {
+                                HandleCommentSubmission(event)
+                            }}
+                            className={`${showComment === "true" ? "visible" : "invisible"} btn btn-primary`}>
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </fieldset>
+        </span>
+        <span className={`${item.status === "inactive" || showComment === "true" ? "invisible" : "visible"}`}>
+            <h1>Comment List</h1>
+            <div className="items-container">
+                {<ListComments
+                    itemComments={itemComments}
+                    item={item}
+                    getComments={getComments}
+                    refreshItem={refreshItem}
+                />}
             </div>
-            <button
-                id={itemId}
-                onClick={(event) => {
-                    HandleCommentSubmission(event)
-                }}
-                className={`${showComment === "true" ? "visible" : "invisible"} btn btn-primary`}>
-                Submit
-            </button>
-        </fieldset>
-        <h1>Comment List</h1>
-        <div className="items-container">
-            {listComments(itemComments)}
-        </div>
+        </span>
     </>)
 }
