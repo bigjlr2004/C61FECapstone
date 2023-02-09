@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Link } from "react-router-dom";
+
 import { useNavigate } from "react-router-dom"
 import "./Login.css"
 
@@ -52,10 +52,12 @@ export const Login = () => {
                                 className="btn btn-primary">
                                 Sign in
                             </button>
-                            <a className="btn btn-primary"
-                                href="/register"
+                            <button className="btn btn-primary"
+                                onClick={() => {
+                                    navigate("/register")
+                                }}
                             >Not a member yet?
-                            </a>
+                            </button>
                         </div>
                     </fieldset>
 

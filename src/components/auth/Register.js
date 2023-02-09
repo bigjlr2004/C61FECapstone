@@ -70,7 +70,7 @@ export const Register = (props) => {
                         <label htmlFor="lastName"> Last Name </label>
                         <input onChange={updateUser}
                             type="text" id="lastName" className="form-control"
-                            placeholder="Enter your Last Name" required autoFocus />
+                            placeholder="Enter your Last Name" required />
                     </div>
                 </fieldset>
                 <fieldset>

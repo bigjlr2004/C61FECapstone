@@ -82,7 +82,7 @@ export const ItemComments = ({ item, itemId, refreshItem, handleUpdateItem }) =>
             </div>
         </span>
 
-        <span className={`${item.status === "inactive" || showComment === "true" ? "visible" : "invisible"}`}>
+        <span className={`${item.status === "inactive" || showComment === "false" ? "invisible" : "vsible"}`}>
             <fieldset>
 
                 <div className="form-group">
@@ -123,7 +123,7 @@ export const ItemComments = ({ item, itemId, refreshItem, handleUpdateItem }) =>
                 </div>
             </fieldset>
         </span>
-        <span className={`${item.status === "inactive" || showComment === "true" ? "invisible" : "visible"}`}>
+        <span className={`${showComment === "true" ? "invisible" : "visible"}`}>
             <h1>Comment List</h1>
             <div className="items-container">
                 {<ListComments

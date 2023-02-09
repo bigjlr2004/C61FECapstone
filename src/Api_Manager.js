@@ -31,6 +31,12 @@ export const sortbyDate = (arr) => {
     }
     return arr.sort(sorter)
 }
+export const sortbyDateDescending = (arr) => {
+    const sorter = (a, b) => {
+        return new Date(b.dateAdded).getTime() - new Date(a.dateAdded).getTime()
+    }
+    return arr.sort(sorter)
+}
 
 export const updateOnChange = (evt, stateVar, setStateFunc) => {
     const copy = { ...stateVar }
