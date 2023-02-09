@@ -198,13 +198,17 @@
       "id": 21
     },
     {
-      "name": "Reality is we are all web devs",
-      "categoryId": 1,
+      "name": "Reality is we are all web devs today, yesterday, and tomorrow.",
+      "categoryId": 3,
       "description": "I make smart, calculated plans for my future.",
       "userId": 1,
       "dateAdded": "2023-02-09T12:48:04.723Z",
       "status": "active",
-      "id": 22
+      "id": 22,
+      "category": {
+        "id": 1,
+        "name": "Start"
+      }
     }
   ],
   "comments": [
@@ -412,6 +416,12 @@
       "dateAdded": "2023-02-09T12:48:04.723Z",
       "itemId": 22,
       "id": 79
+    },
+    {
+      "dateAdded": "2023-02-09T14:12:54.136Z",
+      "userComment": "This stuff is not easy.",
+      "itemId": "22",
+      "id": 80
     }
   ],
   "categories": [

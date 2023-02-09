@@ -16,7 +16,7 @@ export const NavBar = () => {
             <div>
                 <nav className="navbar bg-body-tertiary right-buttons fire">
                     <div className="container-fluid">
-                        <a className="btn btn-primary" data-bs-toggle="offcanvas" href="./homepage" role="button" aria-controls="offcanvasExample">
+                        <a className="btn btn-primary" href="./homepage" role="button" aria-controls="offcanvasExample">
                             Home
                         </a>
                         <button className="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -35,16 +35,16 @@ export const NavBar = () => {
                                 <li className="nav-item active nav-link">TrackIt UserId:  {trackITObject.email}
                                 </li>
 
-                                <a className="btn btn-primary" data-bs-toggle="offcanvas" href="./homepage" role="button" aria-controls="offcanvasExample">
+                                <a className="btn btn-primary" href="./homepage" role="button" aria-controls="offcanvasExample">
                                     Home
                                 </a>
-                                <a className="btn btn-primary" data-bs-toggle="offcanvas" href="./user_history" role="button" aria-controls="offcanvasExample">
+                                <a className="btn btn-primary" href="./user_history" role="button" aria-controls="offcanvasExample">
                                     History
                                 </a>
-                                <a className="btn btn-primary" data-bs-toggle="offcanvas" href="./user_information" role="button" aria-controls="offcanvasExample">
+                                <a className="btn btn-primary" href="./user_information" role="button" aria-controls="offcanvasExample">
                                     Edit Registration
                                 </a>
-                                <a className="btn btn-primary" data-bs-toggle="offcanvas" href="./new_item" role="button" aria-controls="offcanvasExample">
+                                <a className="btn btn-primary" href="./new_item" role="button" aria-controls="offcanvasExample">
                                     New Item
                                 </a>
 
