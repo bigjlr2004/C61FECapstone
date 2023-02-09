@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { standardFetch } from "../../Api_Manager";
+import { sortbyDateDescending, standardFetch } from "../../Api_Manager";
 import { StartPage } from "../HomePage/StartPage";
 import { DisplayItems } from "./DisplayItems";
 
@@ -25,7 +25,7 @@ export const ItemContainer = () => {
     useEffect(
         () => {
             if (seeAllItems) {
-                setFiltered(items)
+                setFiltered(sortbyDateDescending(items))
             } else {
                 const activeItems = items.filter((item) => {
                     return item.status === "active"

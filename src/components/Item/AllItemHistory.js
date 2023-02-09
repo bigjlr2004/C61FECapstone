@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { fetchDelete, returnDate, sortbyDate, standardFetch } from "../../Api_Manager"
+import { fetchDelete, returnDate, sortbyDate, sortbyDateDescending, standardFetch } from "../../Api_Manager"
 
 export const AllItemsHistory = () => {
 
@@ -20,7 +20,7 @@ export const AllItemsHistory = () => {
 
     }, [])
     useEffect(() => {
-        const sorted = sortbyDate(itemHistory)
+        const sorted = sortbyDateDescending(itemHistory)
         setsortedHistory(sorted)
 
     }, [itemHistory])

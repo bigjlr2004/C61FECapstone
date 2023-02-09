@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom"
 import { fetchDelete, standardFetch } from "../../Api_Manager"
 
 export const EditComment = ({ item, comment, editComment, setEditComment, getComments, refreshItem }) => {
-    const navigate = useNavigate()
     const [changeComment, setchangeComment] = useState({
         userComment: "",
         userId: ""
