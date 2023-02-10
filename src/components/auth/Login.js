@@ -19,17 +19,14 @@ export const Login = () => {
                         id: user.id,
                         firstName: user.firstName,
                         email: user.email
-
                     }))
-
-                    navigate("./homepage")
+                    navigate("/homepage")
                 }
                 else {
                     window.alert("Invalid login")
                 }
             })
     }
-
     return (
         <>
             <section>
@@ -45,7 +42,6 @@ export const Login = () => {
                             placeholder="Email address"
                             required autoFocus />
                     </fieldset>
-
                     <fieldset>
                         <div className="bottom-Button">
                             <button type="submit"
@@ -60,9 +56,6 @@ export const Login = () => {
                             </button>
                         </div>
                     </fieldset>
-
-
-
                 </form>
             </section>
 

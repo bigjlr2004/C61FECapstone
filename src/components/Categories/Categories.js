@@ -20,8 +20,6 @@ export const Categories = ({ setShowAddCategory, item, setItem, showAddCategory 
         getCategories()
 
     }, [])
-
-
     return (<>
         <div id="category-selector">
             <div className="card-header">
@@ -51,7 +49,6 @@ export const Categories = ({ setShowAddCategory, item, setItem, showAddCategory 
                         }
                     })
                 }
-
             </select>
         </div>
         <span className={`${item.status === "active" && showAddCategory === "true" ? "visible" : "invisible"}`}>
@@ -67,7 +64,6 @@ export const Categories = ({ setShowAddCategory, item, setItem, showAddCategory 
                 onClick={(event) => {
                     event.preventDefault()
                     setShowAddCategory("true")
-
                 }}
                 className="btn btn-primary">
                 Add Category

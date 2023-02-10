@@ -31,31 +31,36 @@ export const AddCategory = ({ setShowAddCategory, item, setItem, getCategories }
     }
     const handleSaveButtonClick = (event) => {
         event.preventDefault()
-        if (AddCategory)
+
+        if (addCategory.name !== "") {
+
             addCategory.userId = trackITObject.id
-        addCategory.dateAdded = new Date()
+            addCategory.dateAdded = new Date()
 
-        /*
-            TODO: Perform the PUT fetch() call here to update the profile.
-            Navigate user to home page when done.
-        */
-        elephantPost(`http://localhost:8088/categories`, addCategory, "POST")
-            .then((response) => response.json())
-            .then((data) => {
+            /*
+                TODO: Perform the PUT fetch() call here to update the profile.
+                Navigate user to home page when done.
+            */
+            elephantPost(`http://localhost:8088/categories`, addCategory, "POST")
+                .then((response) => response.json())
+                .then((data) => {
 
-                const itemCopy = { ...item }
-                itemCopy.categoryId = data.id
-                setItem(itemCopy)
+                    const itemCopy = { ...item }
+                    itemCopy.categoryId = data.id
+                    setItem(itemCopy)
 
-            }).then(() => {
-                getCategories()
-                setFeedback("Category successfully saved")
-                setShowAddCategory("false")
-                const copy = { ...AddCategory }
-                copy.name = ""
-                return updateAddCategory(copy)
+                }).then(() => {
+                    getCategories()
+                    setFeedback("Category successfully saved")
+                    setShowAddCategory("false")
+                    const copy = { ...AddCategory }
+                    copy.name = ""
+                    return updateAddCategory(copy)
 
-            })
+                })
+        } else {
+            alert("You need to enter a value for the new category.")
+        }
     }
 
 
