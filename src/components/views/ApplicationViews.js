@@ -1,5 +1,4 @@
 import { Navigate, Outlet, Route, Routes } from "react-router-dom"
-import { AddCategory } from "../Categories/AddCategory"
 import { HomePage } from "../HomePage/HomePage"
 import { AllItemsHistory } from "../Item/AllItemHistory"
 import { CreateItem } from "../Item/CreateItem"

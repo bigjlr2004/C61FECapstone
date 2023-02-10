@@ -29,7 +29,7 @@ export const HomeScreenComment = ({ itemObj, handleDeleteItem, handleChangeStatu
         const filteredComments = allComments.filter(comment => parseInt(comment.itemId) === passedItemId)
         const sortedComments = sortbyDate(filteredComments)
         let last = (sortedComments[filteredComments.length - 1])
-        return <div>Comment Added: {returnDate(last?.dateAdded)} {last?.userComment} </div>
+        return <div>Last Update: {returnDate(last?.dateAdded)} {last?.userComment} </div>
     }
     const changeItem = (evt) => {
         const copy = { ...addComment }
@@ -57,7 +57,7 @@ export const HomeScreenComment = ({ itemObj, handleDeleteItem, handleChangeStatu
     }
     return (<>
 
-        <div>{getLastComment(itemObj.id)}</div>
+
 
 
         <div id={`item--${itemObj.id}`}
@@ -137,8 +137,12 @@ export const HomeScreenComment = ({ itemObj, handleDeleteItem, handleChangeStatu
                     Retire Item
                 </button>
             </span>
-
-
         </div>
+        <div className="card-footer text-muted">
+            <div>{getLastComment(itemObj.id)}</div>
+        </div>
+
+
+
     </>)
 }

@@ -1,9 +1,8 @@
-import { useNavigate } from "react-router-dom"
 import { fetchDelete, returnDate } from "../../Api_Manager"
 import { HomeScreenComment } from "../Comments/HomeScreenComment"
 
 export const DisplaySingleItem = ({ filteredItems, getAllItems }) => {
-    const navigate = useNavigate()
+
 
     const handleChangeStatus = (event, obj) => {
         event.preventDefault()
@@ -36,25 +35,25 @@ export const DisplaySingleItem = ({ filteredItems, getAllItems }) => {
         {filteredItems.map((itemObj) => {
             return (
                 <div className="card " key={itemObj.id}>
-                    <div className="card-header">
-                        Status: Something Really Cool Will go here
+
+                    <div className={`${itemObj.status === "active" ? "card-header status-active" : " status-inactive card-header "}`}>
+                        <div className="card-title"> First Steps: {returnDate(itemObj.dateAdded)}</div><div>{itemObj?.category?.name.toUpperCase()}</div>
                     </div>
                     <div className="card-body">
 
-                        <h5 className="card-title">{itemObj.name}</h5>
-                        <p className="card-text">Description: {itemObj.description}</p>
-                        <div>Item Type: {itemObj?.category?.name}</div>
-                        <div className="card-text">DateStarted: {returnDate(itemObj.dateAdded)}</div>
-                        <div>Status: {itemObj.status}</div>
+                        <h5 className="card-title">{itemObj.name.toUpperCase()}</h5>
+                        <h6 className="card-text">Reason: {itemObj.description}</h6>
+                        <div></div>
 
-                        <HomeScreenComment itemObj={itemObj}
-                            handleChangeStatus={handleChangeStatus}
-                            handleDeleteItem={handleDeleteItem} />
+
+
+
 
                     </div>
-                    <div className="card-footer text-muted">
-                        Stretch Goal for how long ago you updated Item.
-                    </div>
+
+                    <HomeScreenComment itemObj={itemObj}
+                        handleChangeStatus={handleChangeStatus}
+                        handleDeleteItem={handleDeleteItem} />
                 </div>
 
 

@@ -54,7 +54,7 @@ export const EditComment = ({ item, comment, editComment, setEditComment, getCom
                     handleEditComment(event)
                 }}
                 className={`${editComment === "false" && item.status === "active" ? "visible" : "invisible"} btn btn-primary`}>
-                Edit Comment
+                Edit
             </button>
             <button
                 id={comment.id}
@@ -97,7 +97,7 @@ export const EditComment = ({ item, comment, editComment, setEditComment, getCom
                         handleCommitButton()
                     }}
                     className="btn btn-primary">
-                    Commit Edit
+                    Save
                 </button>
                 <button
                     type="button"

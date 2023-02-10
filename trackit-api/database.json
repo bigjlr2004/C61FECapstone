@@ -97,6 +97,20 @@
       "lastName": "David",
       "phoneNumber": "111-111-1111",
       "id": 14
+    },
+    {
+      "email": "susan@q.com",
+      "firstName": "Susan",
+      "lastName": "Surandon",
+      "phoneNumber": "1-479-234-1595",
+      "id": 15
+    },
+    {
+      "email": "susan@w.com",
+      "firstName": "Susan",
+      "lastName": "Wessson",
+      "phoneNumber": "12345123",
+      "id": 16
     }
   ],
   "items": [
@@ -226,15 +240,6 @@
       "id": 21
     },
     {
-      "name": "Add a new item",
-      "categoryId": 18,
-      "description": "Add a mew item",
-      "userId": 11,
-      "dateAdded": "2023-02-10T00:01:20.079Z",
-      "status": "active",
-      "id": 23
-    },
-    {
       "name": "Start eating less junk",
       "categoryId": 9,
       "description": "Eat less junk",
@@ -267,12 +272,52 @@
     },
     {
       "name": "Call my brothers once a week.",
-      "categoryId": 6,
-      "description": "A closer relationship is important to me.",
+      "categoryId": 2,
+      "description": "A closer relationship with my brothers is important to me.",
       "userId": 1,
       "dateAdded": "2023-02-10T01:02:12.594Z",
+      "status": "inactive",
+      "id": 27,
+      "category": {
+        "name": "Weekly",
+        "id": 6
+      }
+    },
+    {
+      "name": "Turn in homework on time",
+      "categoryId": 11,
+      "description": "If I turn in my homework on time I will get better grades.",
+      "userId": 15,
+      "dateAdded": "2023-02-10T14:16:08.096Z",
+      "status": "inactive",
+      "id": 28
+    },
+    {
+      "name": "Get more sleep.",
+      "categoryId": 12,
+      "description": "Sleep is very important",
+      "userId": 15,
+      "dateAdded": "2023-02-10T14:18:52.234Z",
       "status": "active",
-      "id": 27
+      "id": 29
+    },
+    {
+      "name": "Exercise",
+      "categoryId": 13,
+      "description": "Energy and motion have the ability to change your emotion.",
+      "userId": 15,
+      "dateAdded": "2023-02-10T14:21:49.020Z",
+      "status": "active",
+      "id": 30
+    },
+    {
+      "name": "Eat more vegetables",
+      "categoryId": 14,
+      "description": "Vegetables are good for you.",
+      "userId": 15,
+      "dateAdded": "2023-02-10T14:41:46.649Z",
+      "status": "active",
+      "id": 31
     }
   ],
   "comments": [
@@ -512,10 +557,34 @@
       "id": 86
     },
     {
-      "userComment": "I will call them on Mondays of every week.",
+      "userComment": "I will call them on Monday of every week.",
       "dateAdded": "2023-02-10T01:02:12.594Z",
       "itemId": 27,
       "id": 87
+    },
+    {
+      "userComment": "Turned in all assignments for today.",
+      "dateAdded": "2023-02-10T14:16:08.096Z",
+      "itemId": 28,
+      "id": 88
+    },
+    {
+      "userComment": "I will go to bed early tonight.",
+      "dateAdded": "2023-02-10T14:18:52.234Z",
+      "itemId": 29,
+      "id": 89
+    },
+    {
+      "userComment": "I will starting walking at lunch.",
+      "dateAdded": "2023-02-10T14:21:49.020Z",
+      "itemId": 30,
+      "id": 90
+    },
+    {
+      "userComment": "I will have a salad for lunch.",
+      "dateAdded": "2023-02-10T14:41:46.650Z",
+      "itemId": 31,
+      "id": 91
     }
   ],
   "categories": [
@@ -548,6 +617,42 @@
       "userId": 14,
       "dateAdded": "2023-02-10T00:44:54.694Z",
       "id": 9
+    },
+    {
+      "name": "",
+      "userId": 1,
+      "dateAdded": "2023-02-10T12:36:14.565Z",
+      "id": 10
+    },
+    {
+      "name": "School Item",
+      "userId": 15,
+      "dateAdded": "2023-02-10T14:16:20.471Z",
+      "id": 11
+    },
+    {
+      "name": "Daily",
+      "userId": 15,
+      "dateAdded": "2023-02-10T14:19:47.422Z",
+      "id": 12
+    },
+    {
+      "name": "Workout",
+      "userId": 15,
+      "dateAdded": "2023-02-10T14:23:11.119Z",
+      "id": 13
+    },
+    {
+      "name": "Healthy",
+      "userId": 15,
+      "dateAdded": "2023-02-10T14:42:41.237Z",
+      "id": 14
+    },
+    {
+      "name": "Daily",
+      "userId": 16,
+      "dateAdded": "2023-02-10T15:31:39.285Z",
+      "id": 15
     }
   ]
 }

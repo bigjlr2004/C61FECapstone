@@ -185,3 +185,17 @@ background-color: white;
 .card {
   margin: 25px;
 }
+.status-active {
+  font-size: 1.0rem;
+  background-color: tomato;
+  color:white;
+justify-content: space-between;
+display:flex;
+}
+.status-inactive {
+  font-size: 1.0rem;
+  background-color:teal;
+  color:white;
+justify-content: space-between;
+display: flex;
+}

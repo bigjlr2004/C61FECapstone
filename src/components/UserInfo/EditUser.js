@@ -55,10 +55,11 @@ export const EditUser = () => {
     }
 
     return (<>
-        <div className={`${feedback.includes("Error") ? "error" : "feedback"} ${feedback === "" ? "invisible" : "visible"}`}>
-            {feedback}
-        </div>
+
         <form className="card">
+            <div className={`${feedback.includes("Error") ? "error" : "feedback"} ${feedback === "" ? "invisible" : "visible"}`}>
+                {feedback}
+            </div>
             <h2 className="profile__title">User Information</h2>
             <fieldset>
                 <div className="card-header">

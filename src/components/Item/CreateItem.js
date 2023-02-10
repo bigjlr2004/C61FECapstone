@@ -68,10 +68,11 @@ export const CreateItem = () => {
         setNewItem(copy)
     }
     return (<>
-        <div className={`${feedback.includes("Error") ? "error" : "feedback"} ${feedback === "" ? "invisible" : "visible"}`}>
-            {feedback}
-        </div>
+
         <form className="card">
+            <div className={`${feedback.includes("Error") ? "error" : "feedback"} ${feedback === "" ? "invisible" : "visible"}`}>
+                {feedback}
+            </div>
             <h2 className="ticketForm__title">New TrackIT Item</h2>
             <fieldset>
                 <div className="card-header">
@@ -90,13 +91,13 @@ export const CreateItem = () => {
             </fieldset>
             <fieldset>
                 <div className="card-header">
-                    <label htmlFor="name">Description:</label>
+                    <label htmlFor="name">Reason:</label>
                     <input
                         required autoFocus
                         id="description"
                         type="text"
                         className="form-control"
-                        placeholder="Item Description"
+                        placeholder="Give a good reason for why you are wanting to track this.."
                         value={newItem.description}
                         onChange={updateItem}
                         autoComplete="off"
