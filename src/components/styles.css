@@ -158,21 +158,15 @@ table,
 th,
 td {
   border: 1px solid;
-
 }
 
 table {
-  
-  border-collapse: collapse;
+ border-collapse: collapse;
 }
 
 .bottom-Buttons {
   display: flex;
   width: 800px;
-
-
-
-  
 }
 .btn {
   width: fit-content;
@@ -180,7 +174,7 @@ table {
 }
 
 .fire {
-  width: 215px;
+  width: 355px;
 }
 .table-color {
 background-color: white;

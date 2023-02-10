@@ -69,6 +69,34 @@
       "lastName": "Goodman",
       "phoneNumber": "800-345-9999",
       "id": 10
+    },
+    {
+      "email": "chris@c.com",
+      "firstName": "Chris Eagle ",
+      "lastName": "Hanson",
+      "phoneNumber": "123-345-6789",
+      "id": 11
+    },
+    {
+      "email": "tricky@tricky.com",
+      "firstName": "Sam",
+      "lastName": "Stallone",
+      "phoneNumber": "47",
+      "id": 12
+    },
+    {
+      "email": "trick@c",
+      "firstName": "tricky",
+      "lastName": "tricky",
+      "phoneNumber": "123456789",
+      "id": 13
+    },
+    {
+      "email": "ziva@ncs.com",
+      "firstName": "Ziva",
+      "lastName": "David",
+      "phoneNumber": "111-111-1111",
+      "id": 14
     }
   ],
   "items": [
@@ -198,17 +226,53 @@
       "id": 21
     },
     {
-      "name": "Reality is we are all web devs today, yesterday, and tomorrow.",
-      "categoryId": 3,
-      "description": "I make smart, calculated plans for my future.",
-      "userId": 1,
-      "dateAdded": "2023-02-09T12:48:04.723Z",
+      "name": "Add a new item",
+      "categoryId": 18,
+      "description": "Add a mew item",
+      "userId": 11,
+      "dateAdded": "2023-02-10T00:01:20.079Z",
       "status": "active",
-      "id": 22,
+      "id": 23
+    },
+    {
+      "name": "Start eating less junk",
+      "categoryId": 9,
+      "description": "Eat less junk",
+      "userId": 14,
+      "dateAdded": "2023-02-10T00:43:52.543Z",
+      "status": "active",
+      "id": 24
+    },
+    {
+      "name": "Item for demonstration",
+      "categoryId": 3,
+      "description": "Good Item description.",
+      "userId": 1,
+      "dateAdded": "2023-02-10T00:48:45.277Z",
+      "status": "active",
+      "id": 25
+    },
+    {
+      "name": "Learn to fly a kite.",
+      "categoryId": 6,
+      "description": "Kite flying is good exercise on a windy day.",
+      "userId": 1,
+      "dateAdded": "2023-02-10T00:50:57.444Z",
+      "status": "active",
+      "id": 26,
       "category": {
-        "id": 1,
-        "name": "Start"
+        "name": "Weekly",
+        "id": 6
       }
+    },
+    {
+      "name": "Call my brothers once a week.",
+      "categoryId": 6,
+      "description": "A closer relationship is important to me.",
+      "userId": 1,
+      "dateAdded": "2023-02-10T01:02:12.594Z",
+      "status": "active",
+      "id": 27
     }
   ],
   "comments": [
@@ -412,16 +476,46 @@
       "id": 78
     },
     {
-      "userComment": "I never know what amazing incredible person I will meet next.",
-      "dateAdded": "2023-02-09T12:48:04.723Z",
-      "itemId": 22,
-      "id": 79
+      "userComment": "Starting comment",
+      "dateAdded": "2023-02-10T00:01:20.079Z",
+      "itemId": 23,
+      "id": 81
     },
     {
-      "dateAdded": "2023-02-09T14:12:54.136Z",
-      "userComment": "This stuff is not easy.",
-      "itemId": "22",
-      "id": 80
+      "dateAdded": "2023-02-10T00:02:34.097Z",
+      "userComment": "Second comment of the day",
+      "itemId": "23",
+      "id": 82
+    },
+    {
+      "userComment": "This looks like a good goal.",
+      "dateAdded": "2023-02-10T00:43:52.543Z",
+      "itemId": 24,
+      "id": 83
+    },
+    {
+      "userComment": "I think this goals is awesome.",
+      "itemId": 24,
+      "dateAdded": "2023-02-10T00:47:30.581Z",
+      "id": 84
+    },
+    {
+      "userComment": "A good comment for demonstration purposes.",
+      "dateAdded": "2023-02-10T00:48:45.277Z",
+      "itemId": 25,
+      "id": 85
+    },
+    {
+      "userComment": "I think it is better to fly kites with friends, that way you have more fun.",
+      "dateAdded": "2023-02-10T00:50:57.444Z",
+      "itemId": 26,
+      "id": 86
+    },
+    {
+      "userComment": "I will call them on Mondays of every week.",
+      "dateAdded": "2023-02-10T01:02:12.594Z",
+      "itemId": 27,
+      "id": 87
     }
   ],
   "categories": [
@@ -436,6 +530,24 @@
     {
       "id": 3,
       "name": "Continue"
+    },
+    {
+      "name": "Weekly",
+      "id": 6
+    },
+    {
+      "name": "Monthly",
+      "id": 7
+    },
+    {
+      "name": "Yearly",
+      "id": 8
+    },
+    {
+      "name": "Bi-Weekly",
+      "userId": 14,
+      "dateAdded": "2023-02-10T00:44:54.694Z",
+      "id": 9
     }
   ]
 }

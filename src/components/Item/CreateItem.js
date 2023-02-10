@@ -7,6 +7,7 @@ export const CreateItem = () => {
 
     const localTrackITUser = localStorage.getItem("trackIT_user")
     const trackITObject = JSON.parse(localTrackITUser);
+    const [showAddCategoryOnNewItem, setShowAddCategoryOnNewItem] = useState("false")
     const navigate = useNavigate()
     const [newItem, setNewItem] = useState({
         name: "",
@@ -103,21 +104,10 @@ export const CreateItem = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div id="category-selector">
-                    <select
-                        className="type-box card-header"
-                        value={newItem.categoryId}
-                        id="category"
-                        onChange={(event) => {
-                            const copy = { ...newItem }
-                            copy.categoryId = parseInt(event.target.value)
-                            setNewItem(copy)
-                        }
-                        }
-                    >
-                        {<Categories />}
-                    </select>
-                </div>
+
+                {<Categories setItem={setNewItem} item={newItem}
+                    setShowAddCategory={setShowAddCategoryOnNewItem}
+                    showAddCategory={showAddCategoryOnNewItem} />}
 
             </fieldset>
             <fieldset>

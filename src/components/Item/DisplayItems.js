@@ -20,6 +20,7 @@ export const DisplayItems = ({ filteredItems, setSeeAllItems, getAllItems }) => 
             className="btn btn-primary">
             Active Items
         </button>
+
         <div className="active-items-container">
             <DisplaySingleItem
                 filteredItems={filteredItems}

@@ -10,6 +10,7 @@ export const EditItem = () => {
     const trackITObject = JSON.parse(localTrackITUser);
     const navigate = useNavigate()
     const { itemId } = useParams()
+    const [showAddCategory, setShowAddCategory] = useState("false")
 
     const [item, setItem] = useState({
         name: "",
@@ -63,6 +64,7 @@ export const EditItem = () => {
         </div>
         <form className="card">
             <h4 className="ticketForm__title">Edit TrackIT Item</h4>
+
             <fieldset>
                 <div className="card-header">
                     <label htmlFor="name">Name:</label>
@@ -93,31 +95,21 @@ export const EditItem = () => {
                     />
                 </div>
             </fieldset>
+
             <fieldset>
-                <div id="category-selector">
-                    <select
-                        className="type-box card-header"
-                        value={item.categoryId}
-                        id="category"
-                        onChange={(event) => {
-                            const copy = { ...item }
-                            copy.categoryId = parseInt(event.target.value)
-                            setItem(copy)
-                        }
-                        }
-                    >
-                        {<Categories />}
-                    </select>
-                </div>
+                {<Categories item={item}
+                    setItem={setItem}
+                    setShowAddCategory={setShowAddCategory}
+                    showAddCategory={showAddCategory} />}
             </fieldset>
-
-            <div>{<ItemComments
-                item={item}
-                itemId={itemId}
-                refreshItem={refreshItem}
-                handleUpdateItem={handleUpdateItem}
-            />}</div>
-
+            <span className={`${showAddCategory === "true" ? "invisible" : "visible"}`}>
+                <div>{<ItemComments
+                    item={item}
+                    itemId={itemId}
+                    refreshItem={refreshItem}
+                    handleUpdateItem={handleUpdateItem}
+                />}</div>
+            </span>
         </form>
 
     </>)

@@ -22,6 +22,9 @@ export const NavBar = () => {
                         <button className="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                             <span className="">Menu</span>
                         </button>
+                        <a className="btn btn-primary" href="./new_item" role="button" aria-controls="offcanvasExample">
+                            New Item
+                        </a>
 
 
                     </div>

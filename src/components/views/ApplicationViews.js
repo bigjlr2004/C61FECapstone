@@ -1,4 +1,5 @@
 import { Navigate, Outlet, Route, Routes } from "react-router-dom"
+import { AddCategory } from "../Categories/AddCategory"
 import { HomePage } from "../HomePage/HomePage"
 import { AllItemsHistory } from "../Item/AllItemHistory"
 import { CreateItem } from "../Item/CreateItem"
@@ -28,6 +29,7 @@ export const ApplicationViews = () => {
 				<Route path="user_information" element={<EditUser />} />
 				<Route path="items/:itemId/edit" element={<EditItem />} />
 				<Route path="homepage" element={<HomePage />} />
+
 
 
 			</Route>
