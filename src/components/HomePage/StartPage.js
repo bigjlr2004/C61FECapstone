@@ -16,7 +16,7 @@ export const StartPage = () => {
                 <p>Instructions</p>
                 <li>First you need you need to click the Start button below.</li>
                 <li>This is going to take you to a create new item screen. </li>
-                <li>Here you will fill in the name of the item, a </li>
+                <li>Here you will fill in the name of the item, a brief description, pick a predefined category or make your own, and enter a starting comment and your set. </li>
             </ol>
 
         </div>

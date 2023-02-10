@@ -68,25 +68,27 @@ export const EditComment = ({ item, comment, editComment, setEditComment, getCom
         <fieldset>
             <div id={`comment--${comment.id}`}
                 className="invisible">
-                <div className="form-group">
-                    <label
-                        className={`form -control`}
-                        htmlFor="userComment">Comment:</label>
-                    <input
-                        id="userComment"
-                        type="text"
-                        className="card-header"
-                        placeholder="Enter you new comment here."
-                        value={changeComment.userComment}
-                        onChange={
-                            (evt) => {
-                                evt.preventDefault()
-                                const copy = { ...changeComment }
-                                copy[evt.target.id] = evt.target.value
-                                setchangeComment(copy)
-                            }}
-                        autoComplete="off"
-                    />
+                <div className="card">
+                    <div className="card-header">
+                        <label
+                            className="card-header"
+                            htmlFor="userComment">Comment:</label>
+                        <input
+                            id="userComment"
+                            type="text"
+                            className="form-control"
+                            placeholder="Enter you new comment here."
+                            value={changeComment.userComment}
+                            onChange={
+                                (evt) => {
+                                    evt.preventDefault()
+                                    const copy = { ...changeComment }
+                                    copy[evt.target.id] = evt.target.value
+                                    setchangeComment(copy)
+                                }}
+                            autoComplete="off"
+                        />
+                    </div>
                 </div>
                 <button
                     id={comment.id}

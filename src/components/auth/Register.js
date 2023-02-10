@@ -23,7 +23,10 @@ export const Register = (props) => {
             .then(createdUser => {
                 if (createdUser.hasOwnProperty("id")) {
                     localStorage.setItem("trackIT_user", JSON.stringify({
-                        id: createdUser.id
+                        id: createdUser.id,
+                        firstName: createdUser.firstName,
+                        email: createdUser.email
+
                     }))
 
                     navigate("/homepage")
