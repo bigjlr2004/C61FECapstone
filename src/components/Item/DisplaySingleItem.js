@@ -43,14 +43,7 @@ export const DisplaySingleItem = ({ filteredItems, getAllItems }) => {
 
                         <h5 className="card-title">{itemObj.name.toUpperCase()}</h5>
                         <h6 className="card-text">Reason: {itemObj.description}</h6>
-                        <div></div>
-
-
-
-
-
                     </div>
-
                     <HomeScreenComment itemObj={itemObj}
                         handleChangeStatus={handleChangeStatus}
                         handleDeleteItem={handleDeleteItem} />

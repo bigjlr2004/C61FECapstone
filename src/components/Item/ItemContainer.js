@@ -38,7 +38,6 @@ export const ItemContainer = () => {
                 sortbyDate(copy)
                 setFiltered(copy)
             } else {
-
                 const activeItems = items.filter((item) => {
                     return item.status === "active"
                 })
@@ -47,13 +46,8 @@ export const ItemContainer = () => {
             }
         }, [seeAllItems])
 
-
-
-
-
     if (filteredItems.length) {
         return <>
-
             <DisplayItems
                 filteredItems={filteredItems}
                 setSeeAllItems={setSeeAllItems}

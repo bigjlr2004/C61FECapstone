@@ -111,6 +111,13 @@
       "lastName": "Wessson",
       "phoneNumber": "12345123",
       "id": 16
+    },
+    {
+      "email": "johnny@j",
+      "firstName": "Johnny ",
+      "lastName": "Cash",
+      "phoneNumber": "789-567-7878",
+      "id": 17
     }
   ],
   "items": [
@@ -259,15 +266,17 @@
     },
     {
       "name": "Learn to fly a kite.",
-      "categoryId": 6,
+      "categoryId": 3,
       "description": "Kite flying is good exercise on a windy day.",
       "userId": 1,
       "dateAdded": "2023-02-10T00:50:57.444Z",
       "status": "active",
       "id": 26,
       "category": {
-        "name": "Weekly",
-        "id": 6
+        "name": "",
+        "userId": 1,
+        "dateAdded": "2023-02-10T12:36:14.565Z",
+        "id": 10
       }
     },
     {
@@ -653,6 +662,58 @@
       "userId": 16,
       "dateAdded": "2023-02-10T15:31:39.285Z",
       "id": 15
+    },
+    {
+      "name": "Shit Storm",
+      "userId": 1,
+      "dateAdded": "2023-02-10T21:19:44.901Z",
+      "id": 16
+    },
+    {
+      "name": "",
+      "userId": 1,
+      "dateAdded": "2023-02-10T22:10:39.836Z",
+      "id": 17
+    },
+    {
+      "name": "",
+      "userId": 1,
+      "dateAdded": "2023-02-10T22:11:40.589Z",
+      "id": 18
+    },
+    {
+      "name": "",
+      "userId": 1,
+      "dateAdded": "2023-02-10T22:14:09.702Z",
+      "id": 19
+    },
+    {
+      "name": "",
+      "userId": 1,
+      "dateAdded": "2023-02-10T22:14:40.535Z",
+      "id": 20
+    },
+    {
+      "name": "",
+      "userId": 1,
+      "dateAdded": "2023-02-10T22:22:36.509Z",
+      "id": 21
+    },
+    {
+      "userId": 1,
+      "dateAdded": "2023-02-10T22:24:50.765Z",
+      "id": 22
+    },
+    {
+      "userId": 1,
+      "dateAdded": "2023-02-10T22:25:49.606Z",
+      "id": 23
+    },
+    {
+      "name": "",
+      "userId": 1,
+      "dateAdded": "2023-02-10T22:28:36.369Z",
+      "id": 24
     }
   ]
 }
