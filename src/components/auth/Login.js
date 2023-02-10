@@ -22,7 +22,7 @@ export const Login = () => {
 
                     }))
 
-                    navigate("/homepage")
+                    navigate("./homepage")
                 }
                 else {
                     window.alert("Invalid login")

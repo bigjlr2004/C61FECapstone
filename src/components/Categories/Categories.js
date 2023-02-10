@@ -54,7 +54,7 @@ export const Categories = ({ setShowAddCategory, item, setItem, showAddCategory 
 
             </select>
         </div>
-        <span className={`${item.status === "inactive" || showAddCategory === "true" ? "visible" : "invisible"}`}>
+        <span className={`${item.status === "active" && showAddCategory === "true" ? "visible" : "invisible"}`}>
             {<AddCategory getCategories={getCategories}
                 showAddCategory={showAddCategory}
                 setShowAddCategory={setShowAddCategory}
@@ -62,7 +62,7 @@ export const Categories = ({ setShowAddCategory, item, setItem, showAddCategory 
                 item={item}
             />}
         </span>
-        <span className={`${item.status === "inactive" || showAddCategory === "false" ? "visible" : "invisible"}`}>
+        <span className={`${item.status === "active" || showAddCategory === "false" ? "visible" : "invisible"}`}>
             <button
                 onClick={(event) => {
                     event.preventDefault()

@@ -59,12 +59,12 @@ export const EditItem = () => {
         }
     }, [feedback])
     return (<>
-        <div className={`${feedback.includes("Error") ? "error" : "feedback"} ${feedback === "" ? "invisible" : "visible"}`}>
-            {feedback}
-        </div>
-        <form className="card">
-            <h4 className="ticketForm__title">Edit TrackIT Item</h4>
 
+        <form className="card">
+            <div className={`${feedback.includes("Error") ? "error" : "feedback"} ${feedback === "" ? "invisible" : "visible"}`}>
+                {feedback}
+            </div>
+            <h4 className="ticketForm__title ">Edit TrackIT Item</h4>
             <fieldset>
                 <div className="card-header">
                     <label htmlFor="name">Name:</label>
@@ -82,7 +82,7 @@ export const EditItem = () => {
             </fieldset>
             <fieldset>
                 <div className="card-header">
-                    <label htmlFor="name">Description:</label>
+                    <label htmlFor="name">Reason:</label>
                     <input
                         required
                         id="description"

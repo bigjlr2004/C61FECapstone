@@ -9,32 +9,20 @@ export const ItemContainer = () => {
     const trackITObject = JSON.parse(localTrackITUser);
     const [items, setItems] = useState([])
     const [filteredItems, setFiltered] = useState([])
-    const [seeAllItems, setSeeAllItems] = useState("")
+    const [seeAllItems, setSeeAllItems] = useState(false)
 
     const getAllItems = () => {
         standardFetch(`http://localhost:8088/items/?userId=${trackITObject.id}&_expand=category`)
             .then((data) => {
+                sortbyDateDescending(data)
                 return setItems(data)
+
             })
     }
     useEffect(
         () => {
             getAllItems()
         }, [])
-
-    useEffect(
-        () => {
-            if (seeAllItems) {
-                setFiltered(sortbyDateDescending(items))
-            } else {
-                sortbyDateDescending(items)
-                const activeItems = items.filter((item) => {
-                    return item.status === "active"
-                })
-                setFiltered(activeItems)
-            }
-        }, [seeAllItems])
-
     useEffect(
         () => {
             const activeItems = items.filter((item) => {
@@ -42,6 +30,24 @@ export const ItemContainer = () => {
             })
             setFiltered(activeItems)
         }, [items])
+
+    useEffect(
+        () => {
+            if (seeAllItems) {
+                let copy = [...items]
+                sortbyDate(copy)
+                setFiltered(copy)
+            } else {
+
+                const activeItems = items.filter((item) => {
+                    return item.status === "active"
+                })
+
+                setFiltered(activeItems)
+            }
+        }, [seeAllItems])
+
+
 
 
 
@@ -52,6 +58,7 @@ export const ItemContainer = () => {
                 filteredItems={filteredItems}
                 setSeeAllItems={setSeeAllItems}
                 getAllItems={getAllItems}
+                seeAllItems={seeAllItems}
             />
         </>
     } else {
