@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react"
-
 import { elephantPost } from "../../Api_Manager"
-
 export const AddCategory = ({ setShowAddCategory, item, setItem, getCategories }) => {
 
     const localTrackITUser = localStorage.getItem("trackIT_user")
@@ -75,7 +73,7 @@ export const AddCategory = ({ setShowAddCategory, item, setItem, getCategories }
                 <label htmlFor="category">Category Name:</label>
                 <input
                     autoFocus
-                    placeholder="Add New Category and Save or Cancel"
+                    placeholder="Enter new category and click either Save or Cancel"
                     type="text"
                     className="form-control"
                     value={addCategory.name}
@@ -89,7 +87,7 @@ export const AddCategory = ({ setShowAddCategory, item, setItem, getCategories }
         <div className="bottom-Buttons">
             <button
                 onClick={(clickEvent) => { handleSaveButtonClick(clickEvent) }}
-                className="btn btn-primary">
+                >
                 Save Category
             </button>
             <button
@@ -100,7 +98,7 @@ export const AddCategory = ({ setShowAddCategory, item, setItem, getCategories }
                     copy.name = ""
                     updateAddCategory(copy)
                 }}
-                className="btn btn-primary">
+                >
                 Cancel
             </button>
         </div>

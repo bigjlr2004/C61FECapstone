@@ -57,23 +57,20 @@ export const ItemComments = ({ item, itemId, refreshItem, handleUpdateItem }) =>
 
 
         <span className={`${item.status === "inactive" || showComment === "true" ? "invisible" : "visible"}`}>
-
             <div className="bottom-Buttons">
-
                 <button
                     id={itemId}
                     onClick={(event) => {
                         event.preventDefault()
                         setShowComment("true")
                     }}
-                    className={`${showComment === "false" && item.status === "active" ? "visible" : "invisible"} btn btn-primary`}>
+                    className={`${showComment === "false" && item.status === "active" ? "visible" : "invisible"}`}>
                     Add Comment
                 </button>
                 <button
                     onClick={(event) => {
                         handleUpdateItem(event)
-                    }}
-                    className="btn btn-primary">
+                    }}>
                     Update Item
                 </button>
                 <button
@@ -81,20 +78,17 @@ export const ItemComments = ({ item, itemId, refreshItem, handleUpdateItem }) =>
                     value={"inactive"}
                     onClick={() => {
                         navigate("/homepage")
-                    }}
-                    className={`btn btn-primary`}>
+                    }}>
                     Cancel
                 </button>
             </div>
         </span>
 
-        <span className={`${item.status === "inactive" || showComment === "false" ? "invisible" : "vsible"}`}>
+        <span className={`${item.status === "inactive" || showComment === "false" ? "invisible" : "visible"}`}>
             <fieldset>
-
                 <div className="form-group">
                     <label
-                        className={`form - control`}
-                        htmlFor="newComment">New Comment:</label>
+                       htmlFor="newComment">New Comment:</label>
                     <input
                         required autoFocus
                         id="userComment"
@@ -109,29 +103,27 @@ export const ItemComments = ({ item, itemId, refreshItem, handleUpdateItem }) =>
                 <div className="bottom-Buttons">
                     <button
                         type="button"
-                        value={"inactive"}
                         onClick={() => {
                             setShowComment("false")
                         }}
-                        className={`btn btn-primary`}>
+                        >
                         Cancel
                     </button>
-                    <div className="bottom-Buttons">
-                        <button
+                      <button
                             id={itemId}
                             onClick={(event) => {
                                 HandleCommentSubmission(event)
                             }}
-                            className={`${showComment === "true" ? "visible" : "invisible"} btn btn-primary`}>
+                            className={`${showComment === "true" ? "visible" : "offscreen"}`}>
                             Submit
                         </button>
                     </div>
-                </div>
+                
             </fieldset>
         </span>
-        <span className={`${showComment === "true" ? "invisible" : "visible"}`}>
-            <h1>Comment List</h1>
-            <div className="card-header">
+        <span className={`${showComment === "true" ? "offscreen" : "visible"}`}>
+            <div>
+                <h2>Comment List</h2>
                 {<ListComments
                     itemComments={itemComments}
                     item={item}

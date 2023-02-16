@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 
 import { useNavigate } from "react-router-dom"
-import "./Login.css"
+
 
 export const Login = () => {
     const [email, set] = useState("john@john.com")
@@ -30,9 +30,8 @@ export const Login = () => {
     return (
         <>
             <section>
-                <form className="card-header" onSubmit={handleLogin}>
+                <form  onSubmit={handleLogin}>
                     <h1>TrackIt Application</h1>
-                    <h2>Please sign in.... Your future self will thank you.</h2>
                     <fieldset>
                         <label htmlFor="inputEmail"> Email address </label>
                         <input type="email"
@@ -58,7 +57,6 @@ export const Login = () => {
                     </fieldset>
                 </form>
             </section>
-
         </>
     )
 }

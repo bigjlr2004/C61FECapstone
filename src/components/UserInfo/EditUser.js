@@ -55,15 +55,14 @@ export const EditUser = () => {
     }
 
     return (<>
-
-        <form className="card">
+<main>
+<form>
             <div className={`${feedback.includes("Error") ? "error" : "feedback"} ${feedback === "" ? "invisible" : "visible"}`}>
                 {feedback}
             </div>
-            <h2 className="profile__title">User Information</h2>
             <fieldset>
-                <div className="card-header">
-                    <label htmlFor="firstName">First Name:</label>
+                        <h2>Edit User Registration</h2>
+                <label htmlFor="firstName">First Name:</label>
                     <input
                         required autoFocus
                         type="text"
@@ -74,11 +73,10 @@ export const EditUser = () => {
                                 { changeUser(evt) }
                             }
                         } />
-                </div>
+                
             </fieldset>
             <fieldset>
-                <div className="card-header">
-                    <label htmlFor="lastName">Last Name:</label>
+                <label htmlFor="lastName">Last Name:</label>
                     <input
                         required
                         type="text"
@@ -92,11 +90,9 @@ export const EditUser = () => {
                                 updateUser(copy)
                             }
                         } />
-                </div>
-            </fieldset>
+                </fieldset>
             <fieldset>
-                <div className="card-header">
-                    <label htmlFor="email">Email Address:</label>
+                <label htmlFor="email">Email Address:</label>
                     <input type="text"
                         className="form-control"
                         value={user.email}
@@ -108,11 +104,9 @@ export const EditUser = () => {
                                 updateUser(copy)
                             }
                         } />
-                </div>
             </fieldset>
             <fieldset>
-                <div className="card-header">
-                    <label htmlFor="phoneNumber">Phone Number:</label>
+                <label htmlFor="phoneNumber">Phone Number:</label>
                     <input type="text"
                         className="form-control"
                         value={user.phoneNumber}
@@ -124,23 +118,21 @@ export const EditUser = () => {
                                 updateUser(copy)
                             }
                         } />
-                </div>
             </fieldset>
             <div className="bottom-Buttons">
                 <button
-                    onClick={(clickEvent) => { handleSaveButtonClick(clickEvent) }}
-                    className="btn btn-primary">
+                    onClick={(clickEvent) => { handleSaveButtonClick(clickEvent) }}>
                     Save Profile
                 </button>
                 <button
                     onClick={(event) => {
                         event.preventDefault()
                         navigate("/homepage")
-                    }}
-                    className="btn btn-primary">
+                    }}>
                     Cancel
                 </button>
             </div>
         </form>
+        </main>
     </>)
 }

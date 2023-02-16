@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom";
-import { elephantPost, standardFetch } from "../../Api_Manager";
+import { elephantPost} from "../../Api_Manager";
 import { Categories } from "../Categories/Categories";
 
 export const CreateItem = () => {
@@ -68,14 +68,13 @@ export const CreateItem = () => {
         setNewItem(copy)
     }
     return (<>
-
-        <form className="card">
+<main>
+        <form>
             <div className={`${feedback.includes("Error") ? "error" : "feedback"} ${feedback === "" ? "invisible" : "visible"}`}>
                 {feedback}
             </div>
-            <h2 className="ticketForm__title">New TrackIT Item</h2>
             <fieldset>
-                <div className="card-header">
+            <h2>New TrackIT Item</h2>
                     <label htmlFor="name">Name:</label>
                     <input
                         required autoFocus
@@ -87,10 +86,8 @@ export const CreateItem = () => {
                         onChange={updateItem}
                         autoComplete="off"
                     />
-                </div>
             </fieldset>
             <fieldset>
-                <div className="card-header">
                     <label htmlFor="name">Reason:</label>
                     <input
                         required autoFocus
@@ -102,17 +99,13 @@ export const CreateItem = () => {
                         onChange={updateItem}
                         autoComplete="off"
                     />
-                </div>
             </fieldset>
             <fieldset>
-
                 {<Categories setItem={setNewItem} item={newItem}
                     setShowAddCategory={setShowAddCategoryOnNewItem}
                     showAddCategory={showAddCategoryOnNewItem} />}
-
             </fieldset>
             <fieldset>
-                <div className="card-header">
                     <label htmlFor="description">Comment:</label>
                     <input
                         required autoFocus
@@ -127,29 +120,24 @@ export const CreateItem = () => {
                             copy[evt.target.id] = evt.target.value
                             setNewComment(copy)
                         }}
-
                     />
-                </div>
             </fieldset>
             <div className="bottom-Buttons">
                 <button
                     onClick={(event) => {
                         handleAddNewItem(event)
-                    }}
-                    className="btn btn-primary">
+                    }}>
                     Create Item
                 </button>
                 <button
                     onClick={(event) => {
                         event.preventDefault()
                         navigate("/homepage")
-                    }}
-                    className="btn btn-primary">
+                    }}>
                     Cancel
                 </button>
             </div>
         </form>
-
-
+        </main>
     </>)
 }

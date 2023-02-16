@@ -8,7 +8,7 @@ export const ListComments = ({ itemComments, item, refreshItem, getComments }) =
 
     return <>
         {itemComments.map((comment) => {
-            return <div className="card-header" key={comment.id}>
+            return <div className="comment__list-card" key={comment.id}>
                 <div className="item-name">Comment: {comment.userComment}</div>
                 <div className="item-name">Date Added: {returnDate(comment.dateAdded)}</div>
                 <EditComment

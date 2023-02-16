@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import "./Login.css"
+
 
 export const Register = (props) => {
     const [newUser, setNewUser] = useState({
@@ -58,46 +58,36 @@ export const Register = (props) => {
 
     return (
         <main>
-            <form className="card" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">Please Register for the TrackIT Application</h1>
+            <form onSubmit={handleRegister}>
                 <fieldset>
-                    <div className="card-header">
-                        <label htmlFor="firstName"> First Name </label>
-                        <input onChange={updateUser}
+                <h1>TrackIT Application Registration</h1>
+                    <label htmlFor="firstName"> First Name </label>
+                    <input onChange={updateUser}
                             type="text" id="firstName" className="form-control"
-                            placeholder="Enter your  First Name" required autoFocus />
-                    </div>
-                </fieldset>
+                            placeholder="Enter your first name" required autoFocus />
+               </fieldset>
                 <fieldset>
-                    <div className="card-header">
-                        <label htmlFor="lastName"> Last Name </label>
-                        <input onChange={updateUser}
+                    <label htmlFor="lastName"> Last Name </label>
+                    <input onChange={updateUser}
                             type="text" id="lastName" className="form-control"
-                            placeholder="Enter your Last Name" required />
-                    </div>
+                            placeholder="Enter your last name" required />
                 </fieldset>
                 <fieldset>
-                    <div className="card-header">
-                        <label htmlFor="email"> Email address </label>
-                        <input onChange={updateUser}
+                    <label htmlFor="email"> Email address </label>
+                    <input onChange={updateUser}
                             type="email" id="email" className="form-control"
                             placeholder="Email address" required />
-                    </div>
                 </fieldset>
                 <fieldset>
-                    <div className="card-header">
-                        <label htmlFor="phoneNumber"> Phone Number </label>
-                        <input onChange={updateUser}
+                    <label htmlFor="phoneNumber"> Phone Number </label>
+                    <input onChange={updateUser}
                             type="tel" id="phoneNumber" className="form-control"
                             placeholder="Phone Number" required />
-                    </div>
                 </fieldset>
                 <fieldset>
-                    <div className="card-header">
-                        <button
-                            className="btn-primary btn"
-                            type="submit"> Register </button>
-                    </div>
+                <button
+                    className="buttonS"
+                    type="submit"> Register </button>
                 </fieldset>
             </form>
         </main>

@@ -53,7 +53,7 @@ export const EditComment = ({ item, comment, editComment, setEditComment, getCom
                     event.preventDefault()
                     handleEditComment(event)
                 }}
-                className={`${editComment === "false" && item.status === "active" ? "visible" : "invisible"} btn btn-primary`}>
+                className={`${editComment === "false" && item.status === "active" ? "visible" : "invisible"}`}>
                 Edit
             </button>
             <button
@@ -61,17 +61,15 @@ export const EditComment = ({ item, comment, editComment, setEditComment, getCom
                 onClick={(event) => {
                     handleDeleteComment(event)
                 }}
-                className={`${editComment === "false" ? "visible" : "invisible"} btn btn-primary`}>
+                className={`${editComment === "false" ? "visible" : "invisible"}`}>
                 Delete
             </button>
         </div>
         <fieldset>
             <div id={`comment--${comment.id}`}
                 className="invisible">
-                <div className="card">
-                    <div className="card-header">
-                        <label
-                            className="card-header"
+                <label
+                            
                             htmlFor="userComment">Comment:</label>
                         <input
                             id="userComment"
@@ -88,15 +86,13 @@ export const EditComment = ({ item, comment, editComment, setEditComment, getCom
                                 }}
                             autoComplete="off"
                         />
-                    </div>
-                </div>
+                  
                 <button
                     id={comment.id}
                     onClick={(event) => {
                         event.preventDefault()
                         handleCommitButton()
-                    }}
-                    className="btn btn-primary">
+                    }}>
                     Save
                 </button>
                 <button
@@ -107,8 +103,7 @@ export const EditComment = ({ item, comment, editComment, setEditComment, getCom
                         const commentElement = document.querySelector(`#comment--${changeComment.id}`)
                         commentElement.className = "invisible"
                         setEditComment("false")
-                    }}
-                    className={`btn btn-primary`}>
+                    }}>
                     Cancel
                 </button>
             </div>

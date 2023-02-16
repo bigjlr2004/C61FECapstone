@@ -203,7 +203,7 @@
       "description": "Deer fear me women adore me. Men wish they were me.",
       "userId": 3,
       "dateAdded": "2023-02-03T00:32:42.180Z",
-      "status": "active",
+      "status": "inactive",
       "id": 15
     },
     {
@@ -262,7 +262,11 @@
       "userId": 1,
       "dateAdded": "2023-02-10T00:48:45.277Z",
       "status": "active",
-      "id": 25
+      "id": 25,
+      "category": {
+        "id": 3,
+        "name": "Continue"
+      }
     },
     {
       "name": "Learn to fly a kite.",
@@ -273,10 +277,8 @@
       "status": "active",
       "id": 26,
       "category": {
-        "name": "",
-        "userId": 1,
-        "dateAdded": "2023-02-10T12:36:14.565Z",
-        "id": 10
+        "id": 3,
+        "name": "Continue"
       }
     },
     {
@@ -327,6 +329,24 @@
       "dateAdded": "2023-02-10T14:41:46.649Z",
       "status": "active",
       "id": 31
+    },
+    {
+      "name": "New Item for tracking",
+      "categoryId": 3,
+      "description": "Good reason",
+      "userId": 3,
+      "dateAdded": "2023-02-16T16:11:24.521Z",
+      "status": "inactive",
+      "id": 32
+    },
+    {
+      "name": "Learn a new language",
+      "categoryId": 1,
+      "description": "Learning a new language would help me in my job",
+      "userId": 3,
+      "dateAdded": "2023-02-16T18:10:48.651Z",
+      "status": "active",
+      "id": 33
     }
   ],
   "comments": [
@@ -530,18 +550,6 @@
       "id": 78
     },
     {
-      "userComment": "Starting comment",
-      "dateAdded": "2023-02-10T00:01:20.079Z",
-      "itemId": 23,
-      "id": 81
-    },
-    {
-      "dateAdded": "2023-02-10T00:02:34.097Z",
-      "userComment": "Second comment of the day",
-      "itemId": "23",
-      "id": 82
-    },
-    {
       "userComment": "This looks like a good goal.",
       "dateAdded": "2023-02-10T00:43:52.543Z",
       "itemId": 24,
@@ -558,12 +566,6 @@
       "dateAdded": "2023-02-10T00:48:45.277Z",
       "itemId": 25,
       "id": 85
-    },
-    {
-      "userComment": "I think it is better to fly kites with friends, that way you have more fun.",
-      "dateAdded": "2023-02-10T00:50:57.444Z",
-      "itemId": 26,
-      "id": 86
     },
     {
       "userComment": "I will call them on Monday of every week.",
@@ -594,6 +596,36 @@
       "dateAdded": "2023-02-10T14:41:46.650Z",
       "itemId": 31,
       "id": 91
+    },
+    {
+      "userComment": "My thoughts are my reality so I think up a bright new day.",
+      "dateAdded": "2023-02-16T16:11:24.521Z",
+      "itemId": 32,
+      "id": 92
+    },
+    {
+      "userComment": "I will purchase a subscription to Rosetta Stone",
+      "dateAdded": "2023-02-16T18:10:48.651Z",
+      "itemId": 33,
+      "id": 93
+    },
+    {
+      "dateAdded": "2023-02-16T21:28:25.543Z",
+      "userComment": "Test Comment",
+      "itemId": "25",
+      "id": 94
+    },
+    {
+      "dateAdded": "2023-02-16T22:05:03.402Z",
+      "userComment": "new comment",
+      "itemId": "26",
+      "id": 95
+    },
+    {
+      "dateAdded": "2023-02-16T22:05:03.402Z",
+      "userComment": "new comment",
+      "itemId": "26",
+      "id": 96
     }
   ],
   "categories": [
@@ -628,12 +660,6 @@
       "id": 9
     },
     {
-      "name": "",
-      "userId": 1,
-      "dateAdded": "2023-02-10T12:36:14.565Z",
-      "id": 10
-    },
-    {
       "name": "School Item",
       "userId": 15,
       "dateAdded": "2023-02-10T14:16:20.471Z",
@@ -662,58 +688,6 @@
       "userId": 16,
       "dateAdded": "2023-02-10T15:31:39.285Z",
       "id": 15
-    },
-    {
-      "name": "Shit Storm",
-      "userId": 1,
-      "dateAdded": "2023-02-10T21:19:44.901Z",
-      "id": 16
-    },
-    {
-      "name": "",
-      "userId": 1,
-      "dateAdded": "2023-02-10T22:10:39.836Z",
-      "id": 17
-    },
-    {
-      "name": "",
-      "userId": 1,
-      "dateAdded": "2023-02-10T22:11:40.589Z",
-      "id": 18
-    },
-    {
-      "name": "",
-      "userId": 1,
-      "dateAdded": "2023-02-10T22:14:09.702Z",
-      "id": 19
-    },
-    {
-      "name": "",
-      "userId": 1,
-      "dateAdded": "2023-02-10T22:14:40.535Z",
-      "id": 20
-    },
-    {
-      "name": "",
-      "userId": 1,
-      "dateAdded": "2023-02-10T22:22:36.509Z",
-      "id": 21
-    },
-    {
-      "userId": 1,
-      "dateAdded": "2023-02-10T22:24:50.765Z",
-      "id": 22
-    },
-    {
-      "userId": 1,
-      "dateAdded": "2023-02-10T22:25:49.606Z",
-      "id": 23
-    },
-    {
-      "name": "",
-      "userId": 1,
-      "dateAdded": "2023-02-10T22:28:36.369Z",
-      "id": 24
     }
   ]
 }
