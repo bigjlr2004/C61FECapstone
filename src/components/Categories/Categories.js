@@ -21,12 +21,14 @@ export const Categories = ({ setShowAddCategory, item, setItem, showAddCategory 
 
     }, [])
     return (<>
-        <div id="category-selector">
-            <div className="card-header">
-                Category:
-            </div>
+       
+        <label htmlFor="category"
+        className={`${ showAddCategory !== "false" ? "offscreen " : "visible"}`}
+        >Categories:</label>
+          
+            <div className="category__container">
             <select
-                className="type-box card-header"
+                className={`${ showAddCategory !== "false" ? "offscreen " : "visible"}`}
                 value={item.categoryId}
                 id="category"
                 onChange={(event) => {
@@ -50,25 +52,28 @@ export const Categories = ({ setShowAddCategory, item, setItem, showAddCategory 
                     })
                 }
             </select>
-        </div>
-        <span className={`${item.status === "active" && showAddCategory === "true" ? "visible" : "invisible"}`}>
+            <button
+                onClick={(event) => {
+                    event.preventDefault()
+                    setShowAddCategory("true")
+                }}
+                className={`${ showAddCategory !== "false" ? "offscreen" : "visible"}`}>
+                New Category
+            </button>
+            </div>
+       
+        <span className={`${item.status === "active" && showAddCategory === "true" ? "visible" : "offscreen"}`}>
             {<AddCategory getCategories={getCategories}
                 showAddCategory={showAddCategory}
                 setShowAddCategory={setShowAddCategory}
                 setItem={setItem}
                 item={item}
             />}
+           
+        
         </span>
-        <span className={`${item.status === "active" || showAddCategory === "false" ? "visible" : "invisible"}`}>
-            <button
-                onClick={(event) => {
-                    event.preventDefault()
-                    setShowAddCategory("true")
-                }}
-                className="btn btn-primary">
-                Add Category
-            </button>
-        </span>
+        
+            
 
     </>
 

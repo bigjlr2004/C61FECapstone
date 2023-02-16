@@ -59,15 +59,14 @@ export const EditItem = () => {
         }
     }, [feedback])
     return (<>
-
-        <form className="card">
+<main>
+        <form>
             <div className={`${feedback.includes("Error") ? "error" : "feedback"} ${feedback === "" ? "invisible" : "visible"}`}>
                 {feedback}
             </div>
-            <h4 className="ticketForm__title ">Edit TrackIT Item</h4>
-            <fieldset>
-                <div className="card-header">
-                    <label htmlFor="name">Name:</label>
+           <fieldset>
+            <h2 className="ticketForm__title ">Item Edit Screen</h2>
+               <label htmlFor="name">Name:</label>
                     <input
                         required autoFocus
                         id="name"
@@ -77,12 +76,10 @@ export const EditItem = () => {
                         value={item.name}
                         onChange={changeItem}
                         autoComplete="off"
-                    />
-                </div>
+                    />               
             </fieldset>
             <fieldset>
-                <div className="card-header">
-                    <label htmlFor="name">Reason:</label>
+               <label htmlFor="name">Reason:</label>
                     <input
                         required
                         id="description"
@@ -93,8 +90,7 @@ export const EditItem = () => {
                         onChange={changeItem}
                         autoComplete="off"
                     />
-                </div>
-            </fieldset>
+               </fieldset>
 
             <fieldset>
                 {<Categories item={item}
@@ -111,7 +107,7 @@ export const EditItem = () => {
                 />}</div>
             </span>
         </form>
-
+        </main>
     </>)
 }
 

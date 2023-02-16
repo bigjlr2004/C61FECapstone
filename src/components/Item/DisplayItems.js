@@ -10,7 +10,7 @@ export const DisplayItems = ({ filteredItems, setSeeAllItems, getAllItems, seeAl
                 onClick={() => {
                     setSeeAllItems(true)
                 }}
-                className="btn btn-primary">
+                >
                 All Items
             </button>
         </span>
@@ -20,7 +20,7 @@ export const DisplayItems = ({ filteredItems, setSeeAllItems, getAllItems, seeAl
                 onClick={() => {
                     setSeeAllItems(false)
                 }}
-                className="btn btn-primary">
+                >
                 Active Items
             </button>
 
