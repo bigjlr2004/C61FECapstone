@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { sortbyDate, sortbyDateDescending, standardFetch } from "../../Api_Manager";
 import { StartPage } from "../HomePage/StartPage";
-import { DisplayItems } from "./DisplayItems";
+import { DisplaySingleItem } from "./DisplaySingleItem";
 
 export const ItemContainer = () => {
 
@@ -16,18 +16,13 @@ export const ItemContainer = () => {
             .then((data) => {
                 sortbyDateDescending(data)
                 return setItems(data)
-
             })
     }
-    useEffect(
-        () => {
-            getAllItems()
-        }, [])
+    useEffect(() => { getAllItems() }, [])
     useEffect(
         () => {
             const activeItems = items.filter((item) => {
-                return item.status === "active"
-            })
+                return item.status === "active"})
             setFiltered(activeItems)
         }, [items])
 
@@ -41,24 +36,35 @@ export const ItemContainer = () => {
                 const activeItems = items.filter((item) => {
                     return item.status === "active"
                 })
-
-                setFiltered(activeItems)
-            }
-        }, [seeAllItems])
+                setFiltered(activeItems)}
+            }, [seeAllItems])
 
     if (filteredItems.length) {
         return <>
-            <DisplayItems
+            <span className={`${seeAllItems === false ? "visible" : "invisible"}`}>
+            <button
+                onClick={() => {
+                    setSeeAllItems(true)
+                }}
+                >
+                All Items
+            </button>
+        </span>
+        <span className={`${seeAllItems === true ? "visible" : "invisible"}`}>
+            <button
+                onClick={() => {
+                    setSeeAllItems(false)
+                }}
+                >
+                Active Items
+            </button>
+        </span>
+                    <DisplaySingleItem
                 filteredItems={filteredItems}
-                setSeeAllItems={setSeeAllItems}
                 getAllItems={getAllItems}
-                seeAllItems={seeAllItems}
-            />
+            />    
         </>
     } else {
         return <StartPage />
     }
-
-
-
 }

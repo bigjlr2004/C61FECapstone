@@ -340,13 +340,26 @@
       "id": 32
     },
     {
-      "name": "Learn a new language",
+      "name": "Get more sleep",
       "categoryId": 1,
-      "description": "Learning a new language would help me in my job",
+      "description": "I want to feel more rested not always be so tired.",
       "userId": 3,
-      "dateAdded": "2023-02-16T18:10:48.651Z",
+      "dateAdded": "2023-02-17T11:57:18.687Z",
+      "status": "inactive",
+      "id": 33,
+      "category": {
+        "id": 1,
+        "name": "Start"
+      }
+    },
+    {
+      "name": "Quit stressing on things I have no control over.",
+      "categoryId": 2,
+      "description": "There is no need to stress over the things that I cannot control.",
+      "userId": 3,
+      "dateAdded": "2023-02-17T12:05:32.830Z",
       "status": "active",
-      "id": 33
+      "id": 34
     }
   ],
   "comments": [
@@ -604,12 +617,6 @@
       "id": 92
     },
     {
-      "userComment": "I will purchase a subscription to Rosetta Stone",
-      "dateAdded": "2023-02-16T18:10:48.651Z",
-      "itemId": 33,
-      "id": 93
-    },
-    {
       "dateAdded": "2023-02-16T21:28:25.543Z",
       "userComment": "Test Comment",
       "itemId": "25",
@@ -626,6 +633,30 @@
       "userComment": "new comment",
       "itemId": "26",
       "id": 96
+    },
+    {
+      "userComment": "I will go to bed at 8:30 tonight and turn off my phone an hour before.",
+      "dateAdded": "2023-02-17T11:57:18.687Z",
+      "itemId": 33,
+      "id": 97
+    },
+    {
+      "dateAdded": "2023-02-17T11:59:18.484Z",
+      "userComment": "I will turn off the TV thirty minutes before bed so I can reflect upon the day.",
+      "itemId": "33",
+      "id": 98
+    },
+    {
+      "userComment": "I will be more mindful about what I can control and what I cannot.",
+      "dateAdded": "2023-02-17T12:05:32.830Z",
+      "itemId": 34,
+      "id": 99
+    },
+    {
+      "dateAdded": "2023-02-17T16:29:42.588Z",
+      "userComment": "test new comment",
+      "itemId": "26",
+      "id": 100
     }
   ],
   "categories": [

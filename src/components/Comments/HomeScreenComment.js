@@ -2,10 +2,10 @@ import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { elephantPost, returnDate, sortbyDate, standardFetch } from "../../Api_Manager"
 
-export const HomeScreenComment = ({ itemObj, handleDeleteItem, handleChangeStatus }) => {
+export const HomeScreenComment = ({ itemObj, setCommentAdd, commentAdd }) => {
     const navigate = useNavigate()
     const [allComments, setAllComments] = useState([])
-    const [commentAdd, setCommentAdd] = useState("false")
+
     const [addComment, setAddComment] = useState({
         userComment: ""
     })
@@ -56,30 +56,24 @@ export const HomeScreenComment = ({ itemObj, handleDeleteItem, handleChangeStatu
         } else { alert(`Please complete the form`) }
     }
     return (<>
-
-
-
-
         <div id={`item--${itemObj.id}`}
             className="invisible">
             <input
                 required autoFocus
                 id="userComment"
                 type="text"
-                className={`form-control`}
+                className="form-control"
                 placeholder="Enter you new comment here."
                 value={addComment?.userComment}
                 onChange={(event) => {
                     changeItem(event)
                 }}
-                autoComplete="off"
-            />
+                autoComplete="off" />
             <button
                 id={itemObj.id}
                 onClick={(event) => {
                     HandleCommentSubmission(event, itemObj.id)
-                }}
-                className="btn btn-primary">
+                }}>
                 Submit
             </button>
             <button
@@ -89,60 +83,23 @@ export const HomeScreenComment = ({ itemObj, handleDeleteItem, handleChangeStatu
                     const commentElement = document.querySelector(`#item--${itemObj.id}`)
                     commentElement.className = "invisible"
                     addComment.userComment = ""
-
-                }}
-                className="btn btn-primary">
+                }}>
                 Cancel
             </button>
         </div>
-        <div className="bottom-Buttons">
-            <span className={`${itemObj.status === "inactive" || commentAdd === "true" ? "invisible" : "visible"}`}>
-                <a
-                    id={itemObj.id}
-                    value={"inactive"}
-                    onClick={(event) => {
-                        handleShowCommentField(event, itemObj.id)
-                    }}
-                    className={`btn btn-primary`}>
-                    New Comment
-                </a>
-            </span>
-            <span className={`${commentAdd === "true" ? "invisible" : "visible"}`}>
-                <button
-                    id={itemObj.id}
-                    onClick={(event) => {
-                        handleDeleteItem(event)
-                    }}
-                    className="btn btn-primary">
-                    Delete Item
-                </button>
-                <button
-                    id={itemObj.id}
-                    onClick={(event) => {
-                        navigate(`/items/${itemObj.id}/edit`)
-                    }}
-                    className="btn btn-primary">
-                    Edit Item
-                </button>
 
-            </span>
-            <span className={`${itemObj.status === "inactive" || commentAdd === "true" ? "invisible" : "visible"}`}>
-                <button
-                    id={itemObj.id}
-                    value={"inactive"}
-                    onClick={(event) => {
-                        handleChangeStatus(event, itemObj)
-                    }}
-                    className={`btn btn-primary`}>
-                    Retire Item
-                </button>
-            </span>
-        </div>
-        <div className="card-footer text-muted">
-            <div>{getLastComment(itemObj.id)}</div>
-        </div>
+        <span className={`${itemObj.status === "inactive" || commentAdd === "true" ? "invisible" : "visible"}`}>
+            <button
+                id={itemObj.id}
+                value={"inactive"}
+                onClick={(event) => {
+                    handleShowCommentField(event, itemObj.id)
+                }}>
+                New Comment
+            </button>
+        </span>
 
 
-
+        <div>{getLastComment(itemObj.id)}</div>
     </>)
 }

@@ -5,6 +5,7 @@ export const StartPage = () => {
     const localTrackITUser = localStorage.getItem("trackIT_user")
     const trackITObject = JSON.parse(localTrackITUser);
     return <>
+    <main>
         <h1>Welcome {trackITObject.firstName}</h1>
         <div className="instruction_paragraph">
             <ol>
@@ -18,12 +19,15 @@ export const StartPage = () => {
 
         </div>
         <h1>What are you waiting for {trackITObject.firstName}, lets get started ?</h1>
+        <div className="test">
         <button
             onClick={(event) => {
                 navigate("/new_item")
             }}
-            className="start_button">
+            className="start_button center">
             Start
         </button>
+        </div>
+        </main>
     </>
 }
