@@ -88,12 +88,12 @@ export const ItemComments = ({ item, itemId, refreshItem, handleUpdateItem }) =>
             <fieldset>
                 <div className="form-group">
                     <label
-                       htmlFor="newComment">New Comment:</label>
+                        htmlFor="newComment">New Comment:</label>
                     <input
                         required autoFocus
                         id="userComment"
                         type="text"
-                        className={`form-control`}
+                        className="form-control"
                         placeholder="Enter you new comment here."
                         value={newComment.userComment}
                         onChange={changeItem}
@@ -106,19 +106,20 @@ export const ItemComments = ({ item, itemId, refreshItem, handleUpdateItem }) =>
                         onClick={() => {
                             setShowComment("false")
                         }}
-                        >
+                    >
                         Cancel
                     </button>
-                      <button
-                            id={itemId}
-                            onClick={(event) => {
-                                HandleCommentSubmission(event)
-                            }}
-                            className={`${showComment === "true" ? "visible" : "offscreen"}`}>
-                            Submit
-                        </button>
-                    </div>
-                
+                    <button
+                        id={itemId}
+                        onClick={(event) => {
+                            HandleCommentSubmission(event)
+                            newComment.userComment = ""
+                        }}
+                        className={`${showComment === "true" ? "visible" : "offscreen"}`}>
+                        Submit
+                    </button>
+                </div>
+
             </fieldset>
         </span>
         <span className={`${showComment === "true" ? "offscreen" : "visible"}`}>

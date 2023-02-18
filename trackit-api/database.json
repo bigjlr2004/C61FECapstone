@@ -282,19 +282,6 @@
       }
     },
     {
-      "name": "Call my brothers once a week.",
-      "categoryId": 2,
-      "description": "A closer relationship with my brothers is important to me.",
-      "userId": 1,
-      "dateAdded": "2023-02-10T01:02:12.594Z",
-      "status": "inactive",
-      "id": 27,
-      "category": {
-        "name": "Weekly",
-        "id": 6
-      }
-    },
-    {
       "name": "Turn in homework on time",
       "categoryId": 11,
       "description": "If I turn in my homework on time I will get better grades.",
@@ -581,12 +568,6 @@
       "id": 85
     },
     {
-      "userComment": "I will call them on Monday of every week.",
-      "dateAdded": "2023-02-10T01:02:12.594Z",
-      "itemId": 27,
-      "id": 87
-    },
-    {
       "userComment": "Turned in all assignments for today.",
       "dateAdded": "2023-02-10T14:16:08.096Z",
       "itemId": 28,
@@ -657,6 +638,18 @@
       "userComment": "test new comment",
       "itemId": "26",
       "id": 100
+    },
+    {
+      "dateAdded": "2023-02-17T17:43:11.058Z",
+      "userComment": "I take comfort in the fact that I can always leave this situation.",
+      "itemId": "26",
+      "id": 101
+    },
+    {
+      "dateAdded": "2023-02-17T17:47:06.863Z",
+      "userComment": "I love and approve of myself.",
+      "itemId": "26",
+      "id": 102
     }
   ],
   "categories": [

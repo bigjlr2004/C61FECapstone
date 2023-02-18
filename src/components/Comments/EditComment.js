@@ -69,29 +69,30 @@ export const EditComment = ({ item, comment, editComment, setEditComment, getCom
             <div id={`comment--${comment.id}`}
                 className="invisible">
                 <label
-                            
-                            htmlFor="userComment">Comment:</label>
-                        <input
-                            id="userComment"
-                            type="text"
-                            className="form-control"
-                            placeholder="Enter you new comment here."
-                            value={changeComment.userComment}
-                            onChange={
-                                (evt) => {
-                                    evt.preventDefault()
-                                    const copy = { ...changeComment }
-                                    copy[evt.target.id] = evt.target.value
-                                    setchangeComment(copy)
-                                }}
-                            autoComplete="off"
-                        />
-                  
+
+                    htmlFor="userComment">Comment:</label>
+                <input
+                    id="userComment"
+                    type="text"
+                    className="form-control"
+                    placeholder="Enter you new comment here."
+                    value={changeComment.userComment}
+                    onChange={
+                        (evt) => {
+                            evt.preventDefault()
+                            const copy = { ...changeComment }
+                            copy[evt.target.id] = evt.target.value
+                            setchangeComment(copy)
+                        }}
+                    autoComplete="off"
+                />
+
                 <button
                     id={comment.id}
                     onClick={(event) => {
                         event.preventDefault()
                         handleCommitButton()
+
                     }}>
                     Save
                 </button>

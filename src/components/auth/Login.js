@@ -29,8 +29,9 @@ export const Login = () => {
     }
     return (
         <>
+
             <section>
-                <form  onSubmit={handleLogin}>
+                <form onSubmit={handleLogin}>
                     <h1>TrackIt Application</h1>
                     <fieldset>
                         <label htmlFor="inputEmail"> Email address </label>
