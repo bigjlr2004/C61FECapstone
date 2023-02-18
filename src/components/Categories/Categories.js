@@ -21,14 +21,14 @@ export const Categories = ({ setShowAddCategory, item, setItem, showAddCategory 
 
     }, [])
     return (<>
-       
+
         <label htmlFor="category"
-        className={`${ showAddCategory !== "false" ? "offscreen " : "visible"}`}
+            className={`${showAddCategory !== "false" ? "offscreen " : "visible"}`}
         >Categories:</label>
-          
-            <div className="category__container">
+
+        <div className="category__container">
             <select
-                className={`${ showAddCategory !== "false" ? "offscreen " : "visible"}`}
+                className={`${showAddCategory !== "false" ? "offscreen " : "visible"} category-drop`}
                 value={item.categoryId}
                 id="category"
                 onChange={(event) => {
@@ -57,11 +57,11 @@ export const Categories = ({ setShowAddCategory, item, setItem, showAddCategory 
                     event.preventDefault()
                     setShowAddCategory("true")
                 }}
-                className={`${ showAddCategory !== "false" ? "offscreen" : "visible"}`}>
+                className={`${showAddCategory !== "false" ? "offscreen" : "visible"}`}>
                 New Category
             </button>
-            </div>
-       
+        </div>
+
         <span className={`${item.status === "active" && showAddCategory === "true" ? "visible" : "offscreen"}`}>
             {<AddCategory getCategories={getCategories}
                 showAddCategory={showAddCategory}
@@ -69,11 +69,11 @@ export const Categories = ({ setShowAddCategory, item, setItem, showAddCategory 
                 setItem={setItem}
                 item={item}
             />}
-           
-        
+
+
         </span>
-        
-            
+
+
 
     </>
 

@@ -19,32 +19,7 @@
   justify-content: center;
 }
 
-.item-card {
-  flex: 0 0 25%;
-  display: flex;
-  padding: 15px;
-  margin: 15px;
-  flex-direction: column;
-  align-items: flex-start;
-  border: 1px black solid;
-}
 
-.item-img:hover {
-  box-shadow: 3px 2px 3px gray;
-}
-
-.item-name {
-  font-size: 1rem;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.history {
-  display: flex;
-}
-
-.history-name {
-  margin: 5px;
-}
 
 table,
 th,
@@ -56,14 +31,8 @@ table {
   border-collapse: collapse;
 }
 
-.btn {
-  width: fit-content;
-  margin: 10px;
-}
 
-.fire {
-  width: 800px;
-}
 .table-color {
   background-color: white;
 }
+
