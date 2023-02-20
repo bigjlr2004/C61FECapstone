@@ -451,4 +451,14 @@ max-width: 150px;
     color: var(--FONT-COLOR);
   }
 }
+
+.front-div {
+  display: flex;
+  padding: 200px;;
+  justify-content: center;
+}
+.front-section {
+  width: 600px;
+  
+}
   

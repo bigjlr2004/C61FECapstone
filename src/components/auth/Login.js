@@ -29,35 +29,36 @@ export const Login = () => {
     }
     return (
         <>
-
-            <section>
-                <form onSubmit={handleLogin}>
-                    <h1 className="backlight">TrackIt Application</h1>
-                    <fieldset>
-                        <label htmlFor="inputEmail"> Email address </label>
-                        <input type="email"
-                            value={email}
-                            onChange={evt => set(evt.target.value)}
-                            className="form-control"
-                            placeholder="Email address"
-                            required autoFocus />
-                    </fieldset>
-                    <fieldset>
-                        <div className="bottom-Button">
-                            <button type="submit"
-                                className="btn btn-primary">
-                                Sign in
-                            </button>
-                            <button className="btn btn-primary"
-                                onClick={() => {
-                                    navigate("/register")
-                                }}
-                            >Not a member yet?
-                            </button>
-                        </div>
-                    </fieldset>
-                </form>
-            </section>
+            <div className="front-div">
+                <section className="front-section">
+                    <form onSubmit={handleLogin}>
+                        <h1 className="backlight">TrackIt Application</h1>
+                        <fieldset>
+                            <label htmlFor="inputEmail"> Email address </label>
+                            <input type="email"
+                                value={email}
+                                onChange={evt => set(evt.target.value)}
+                                className="form-control"
+                                placeholder="Email address"
+                                required autoFocus />
+                        </fieldset>
+                        <fieldset>
+                            <div className="bottom-Button">
+                                <button type="submit"
+                                >
+                                    Sign in
+                                </button>
+                                <button
+                                    onClick={() => {
+                                        navigate("/register")
+                                    }}
+                                >Not a member yet?
+                                </button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </section>
+            </div>
         </>
     )
 }
