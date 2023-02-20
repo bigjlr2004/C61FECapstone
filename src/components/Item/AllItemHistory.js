@@ -47,12 +47,12 @@ export const AllItemsHistory = () => {
                         <td>{itemObj.status}</td>
                         <td>{returnDate(itemObj.dateAdded)}</td>
                         <td>{itemObj?.category?.name}</td>
-                        <td ><button
+                        <td><button
                             id={itemObj.id}
                             onClick={(event) => {
                                 handleDeleteItem(event)
                             }}
-                            className="btn btn-primary">
+                        >
                             Delete Item
                         </button></td>
                     </tr>
