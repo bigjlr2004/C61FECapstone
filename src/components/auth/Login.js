@@ -32,7 +32,7 @@ export const Login = () => {
 
             <section>
                 <form onSubmit={handleLogin}>
-                    <h1>TrackIt Application</h1>
+                    <h1 className="backlight">TrackIt Application</h1>
                     <fieldset>
                         <label htmlFor="inputEmail"> Email address </label>
                         <input type="email"
