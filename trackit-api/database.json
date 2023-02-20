@@ -363,13 +363,17 @@
       "id": 34
     },
     {
-      "name": "Start serve side .",
+      "name": "Start server side .",
       "categoryId": 6,
       "description": "Server side is the cat's meow.",
       "userId": 1,
       "dateAdded": "2023-02-20T11:56:44.688Z",
       "status": "active",
-      "id": 35
+      "id": 35,
+      "category": {
+        "name": "Weekly",
+        "id": 6
+      }
     }
   ],
   "comments": [
