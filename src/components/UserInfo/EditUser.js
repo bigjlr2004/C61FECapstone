@@ -36,6 +36,12 @@ export const EditUser = () => {
     const handleSaveButtonClick = (event) => {
         event.preventDefault()
 
+        localStorage.setItem("trackIT_user", JSON.stringify({
+            id: user.id,
+            firstName: user.firstName,
+            email: user.email
+        }))
+
         /*
             TODO: Perform the PUT fetch() call here to update the profile.
             Navigate user to home page when done.
@@ -55,14 +61,14 @@ export const EditUser = () => {
     }
 
     return (<>
-<main>
-<form>
-            <div className={`${feedback.includes("Error") ? "error" : "feedback"} ${feedback === "" ? "invisible" : "visible"}`}>
-                {feedback}
-            </div>
-            <fieldset>
-                        <h2>Edit User Registration</h2>
-                <label htmlFor="firstName">First Name:</label>
+        <main>
+            <form>
+                <div className={`${feedback.includes("Error") ? "error" : "feedback"} ${feedback === "" ? "invisible" : "visible"}`}>
+                    {feedback}
+                </div>
+                <fieldset>
+                    <h2>Edit Registration</h2>
+                    <label htmlFor="firstName">First Name:</label>
                     <input
                         required autoFocus
                         type="text"
@@ -73,10 +79,10 @@ export const EditUser = () => {
                                 { changeUser(evt) }
                             }
                         } />
-                
-            </fieldset>
-            <fieldset>
-                <label htmlFor="lastName">Last Name:</label>
+
+                </fieldset>
+                <fieldset>
+                    <label htmlFor="lastName">Last Name:</label>
                     <input
                         required
                         type="text"
@@ -91,8 +97,8 @@ export const EditUser = () => {
                             }
                         } />
                 </fieldset>
-            <fieldset>
-                <label htmlFor="email">Email Address:</label>
+                <fieldset>
+                    <label htmlFor="email">Email Address:</label>
                     <input type="text"
                         className="form-control"
                         value={user.email}
@@ -104,9 +110,9 @@ export const EditUser = () => {
                                 updateUser(copy)
                             }
                         } />
-            </fieldset>
-            <fieldset>
-                <label htmlFor="phoneNumber">Phone Number:</label>
+                </fieldset>
+                <fieldset>
+                    <label htmlFor="phoneNumber">Phone Number:</label>
                     <input type="text"
                         className="form-control"
                         value={user.phoneNumber}
@@ -118,21 +124,21 @@ export const EditUser = () => {
                                 updateUser(copy)
                             }
                         } />
-            </fieldset>
-            <div className="bottom-Buttons">
-                <button
-                    onClick={(clickEvent) => { handleSaveButtonClick(clickEvent) }}>
-                    Save Profile
-                </button>
-                <button
-                    onClick={(event) => {
-                        event.preventDefault()
-                        navigate("/homepage")
-                    }}>
-                    Cancel
-                </button>
-            </div>
-        </form>
+                </fieldset>
+                <div className="bottom-Buttons">
+                    <button
+                        onClick={(clickEvent) => { handleSaveButtonClick(clickEvent) }}>
+                        Save Profile
+                    </button>
+                    <button
+                        onClick={(event) => {
+                            event.preventDefault()
+                            navigate("/homepage")
+                        }}>
+                        Cancel
+                    </button>
+                </div>
+            </form>
         </main>
     </>)
 }

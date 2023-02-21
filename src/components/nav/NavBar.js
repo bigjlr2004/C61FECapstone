@@ -10,7 +10,7 @@ export const NavBar = () => {
         <>
             <header>
                 <section className="header-title-line">
-                    <h1 className="backlight">TrackIT Application</h1>
+                    <h1 className="banner">TrackIT Application</h1>
                     <button className="menu-button">
                         <div className="menu-icon"></div>
                     </button>

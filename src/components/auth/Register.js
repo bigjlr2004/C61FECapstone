@@ -57,39 +57,43 @@ export const Register = (props) => {
     }
 
     return (
-        <main>
-            <form onSubmit={handleRegister}>
-                <fieldset>
-                    <h1>TrackIT Application Registration</h1>
-                    <label htmlFor="firstName"> First Name </label>
-                    <input onChange={updateUser}
-                        type="text" id="firstName" className="form-control"
-                        placeholder="Enter your first name" required autoFocus />
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="lastName"> Last Name </label>
-                    <input onChange={updateUser}
-                        type="text" id="lastName" className="form-control"
-                        placeholder="Enter your last name" required />
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="email"> Email address </label>
-                    <input onChange={updateUser}
-                        type="email" id="email" className="form-control"
-                        placeholder="Email address" required />
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="phoneNumber"> Phone Number </label>
-                    <input onChange={updateUser}
-                        type="tel" id="phoneNumber" className="form-control"
-                        placeholder="Phone Number" required />
-                </fieldset>
-                <fieldset>
-                    <button
-                        className="buttonS"
-                        type="submit"> Register </button>
-                </fieldset>
-            </form>
+        <main><h1 className="banner">TrackIT Registration</h1>
+            <div className="register-div">
+                <section className="front-section">
+                    <form onSubmit={handleRegister}>
+                        <fieldset>
+
+                            <label htmlFor="firstName"> First Name </label>
+                            <input onChange={updateUser}
+                                type="text" id="firstName" className="form-control"
+                                placeholder="Enter your first name" required autoFocus />
+                        </fieldset>
+                        <fieldset>
+                            <label htmlFor="lastName"> Last Name </label>
+                            <input onChange={updateUser}
+                                type="text" id="lastName" className="form-control"
+                                placeholder="Enter your last name" required />
+                        </fieldset>
+                        <fieldset>
+                            <label htmlFor="email"> Email address </label>
+                            <input onChange={updateUser}
+                                type="email" id="email" className="form-control"
+                                placeholder="Email address" required />
+                        </fieldset>
+                        <fieldset>
+                            <label htmlFor="phoneNumber"> Phone Number </label>
+                            <input onChange={updateUser}
+                                type="tel" id="phoneNumber" className="form-control"
+                                placeholder="Phone Number" required />
+                        </fieldset>
+                        <fieldset>
+                            <button
+                                className="buttonS"
+                                type="submit"> Register </button>
+                        </fieldset>
+                    </form>
+                </section>
+            </div>
         </main>
     )
 }

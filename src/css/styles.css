@@ -95,9 +95,9 @@ body {
     background-color: var(--BGCOLOR);
     background-image: var(--BGIMAGE);
     color: var(--FONT-COLOR);
-    min-height: 100vh;
+    min-height: 150vh;
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 25px auto;
     border-left: var(--BORDERS);
     border-right: var(--BORDERS);
     box-shadow: 0 0 15px var(--BORDER-COLOR);
@@ -114,7 +114,7 @@ html {
     background-color: var(--BGCOLOR);
     background-image: var(--BGIMAGE);
     min-height: 120vw;
-    margin-bottom: 2em;
+    margin-bottom: 2rem;
 }
 h1,
 h2,
@@ -336,7 +336,7 @@ button {
   
   .start_button {
     width: 300px;
-    height: 150px;
+    height: 100px;
     font-size: 35px;
   }
   .test {
@@ -364,6 +364,7 @@ button {
     flex-basis: 5;
   }
   .track-card-container {
+    padding: 25px;
     display: flex;
     flex-direction: row;
     border-top: 1px solid gray;
@@ -454,11 +455,242 @@ max-width: 150px;
 
 .front-div {
   display: flex;
-  padding: 200px;;
+  padding: 100px;;
   justify-content: center;
 }
 .front-section {
   width: 600px;
   
 }
+.register-div {
+  display: flex;
+  padding: 100px;;
+  justify-content: center;
+}
+
+.banner {
+  transform: skew(-10deg, -5deg) scaleY(1);
+  padding: 0.25em 0.25em;
   
+  text-shadow: 2px 2px 5px var(--BORDER-COLOR);
+  color: var(--HERO-COLOR);
+}
+.hero__h1 {
+    
+  color: var(--HERO-COLOR);
+  padding: 0.25em 0.25em;
+  text-shadow: 2px 2px 5px var(--BORDER-COLOR);
+  position: absolute;
+  top: -200px;
+  left: 463px;
+  animation: showWelcome 0.5s ease-in-out 1s forwards;
+}
+
+@keyframes showWelcome {
+  0% {
+    top: -20px;
+    transform: skew(0deg, -5deg) scaleY(0);
+  }
+  80% {
+    top: 200px;
+    transform: skew(10deg, -5deg) scaleY(1.2);
+  }
+  100% {
+    top:35px;
+    transform: skew(-10deg, -5deg) scaleY(1);
+  }
+}
+
+.sand{
+  position:absolute;
+  bottom:200px;
+  width:50%;
+  height: 9vw;
+  min-height: 8rem;
+  left: 50%;
+
+}
+
+
+
+.pendulums{
+  position:absolute;
+  width:50px;
+  height:200px;
+  right:35vw;
+  top:-120px;
+  perspective:300px;
+}
+
+.pendulum{
+  position:absolute;
+  width:50px;
+  height:200px;
+  right:44%;
+  top:0;
+  left:50%;
+  transform: translateZ(-300px) translateX(-50%);
+}
+
+.pendulum.shadow{
+  top:263%;
+  left:-195%;
+  bottom:0;
+  transform-origin: 50% 0;
+transform:translateX(-50%) scaleY(-1) scaleZ(2) rotateY(-30deg) rotateX(-90deg) translateZ(300px);
+}
+
+.pendulum .bar{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:0;
+  display:block;
+  width: 20px;
+  height:200px;
+  background:#333;
+}
+
+.pendulum1 .bar1{
+  position:absolute;
+  left:100%;
+  transform:translateX(-50%);
+  bottom:0;
+  display:block;
+  width: 20px;
+  height:200px;
+  background:#333;
+}
+.pendulum .string{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  width:2px;
+  height:150px;
+  background:#333;
+}
+
+.pendulum .weight{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:10px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:#333;
+}
+
+.pendulum .motion{
+  position:absolute;
+  height:200px;
+  width:50px;
+  transform-origin:50% 10px;
+  animation: swing 1600ms infinite ease-in-out;
+}
+.pendulums{
+  position:absolute;
+  width:50px;
+  height:200px;
+  right:35vw;
+  top:-120px;
+  perspective:400px;
+}
+
+.pendulum1{
+  position:absolute;
+  width:50px;
+  height:200px;
+  right:94%;
+  top:0;
+  left:100%;
+  transform: translateZ(-300px) translateX(-50%);
+}
+
+.pendulum1.shadow1{
+  top:263%;
+  left:-130%;
+  bottom:0;
+  transform-origin: 100% 0;
+transform:translateX(-50%) scaleY(-1) scaleZ(2) rotateY(-30deg) rotateX(-90deg) translateZ(300px);
+
+}
+
+
+
+.pendulum1 .string1{
+  position:absolute;
+  left:100%;
+  transform:translateX(-50%);
+  width:2px;
+  height:150px;
+  background:#333;
+}
+
+.pendulum1 .weight1{
+  position:absolute;
+  left:100%;
+  transform:translateX(-50%);
+  bottom:10px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:#333;
+}
+
+.pendulum1 .motion1{
+  position:absolute;
+  height:200px;
+  width:50px;
+  transform-origin:100% 10px;
+  animation: swing2 1600ms infinite ease-in-out;
+}
+
+.pendulum.shadow .bar, .pendulum.shadow .string, .pendulum.shadow .weight{
+  background:#3d3a34;
+  
+}
+pendulum1.shadow1 .bar1, .pendulum1.shadow1 .string1, .pendulum1.shadow1 .weight1{
+  background:#3d3a34;
+}
+
+
+
+@keyframes swing{
+  0%{    
+  transform:rotate(180deg);
+  }
+  50%{
+    
+  transform:rotate(90deg);
+  }
+  100%{
+    
+  transform:rotate(-180deg);
+  }
+}
+@keyframes swing2{
+  0%{    
+  transform:rotate(-180deg);
+  }
+  50%{
+    
+  transform:rotate(90deg);
+  }
+  100%{
+    
+  transform:rotate(180deg);
+  }
+}
+
+@media only screen and (orientation: portrait) {
+  .text{
+    right: 50%;
+    top: 10%;
+    transform: translateX(50%);
+    font-size: 7vw;
+  }
+  .title{ 
+    font-size: 1em;
+  }
+}

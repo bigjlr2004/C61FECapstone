@@ -47,6 +47,7 @@ export const DisplaySingleItem = ({ filteredItems, getAllItems }) => {
                                 Reason: {itemObj.description}
                                 <div>Started: {returnDate(itemObj.dateAdded)}</div>
                             </div>
+
                             <div>
                                 <HomeScreenComment itemObj={itemObj}
                                     commentAdd={commentAdd}

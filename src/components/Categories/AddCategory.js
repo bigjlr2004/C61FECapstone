@@ -72,7 +72,7 @@ export const AddCategory = ({ setShowAddCategory, item, setItem, getCategories }
             <div className="card-header">
                 <label htmlFor="category">Category Name:</label>
                 <input
-                    autoFocus
+
                     placeholder="Enter new category and click either Save or Cancel"
                     type="text"
                     className="form-control"
@@ -87,7 +87,7 @@ export const AddCategory = ({ setShowAddCategory, item, setItem, getCategories }
         <div className="bottom-Buttons">
             <button
                 onClick={(clickEvent) => { handleSaveButtonClick(clickEvent) }}
-                >
+            >
                 Save Category
             </button>
             <button
@@ -98,7 +98,7 @@ export const AddCategory = ({ setShowAddCategory, item, setItem, getCategories }
                     copy.name = ""
                     updateAddCategory(copy)
                 }}
-                >
+            >
                 Cancel
             </button>
         </div>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom";
-import { elephantPost} from "../../Api_Manager";
+import { elephantPost } from "../../Api_Manager";
 import { Categories } from "../Categories/Categories";
 
 export const CreateItem = () => {
@@ -29,8 +29,6 @@ export const CreateItem = () => {
             // Clear feedback to make entire element disappear after 3 seconds
             setTimeout(() => setFeedback(""), 3000);
             setTimeout(() => navigate("/homepage"), 1500);
-
-
         }
     }, [feedback])
     const handleAddNewItem = (event) => {
@@ -68,13 +66,13 @@ export const CreateItem = () => {
         setNewItem(copy)
     }
     return (<>
-<main>
-        <form>
-            <div className={`${feedback.includes("Error") ? "error" : "feedback"} ${feedback === "" ? "invisible" : "visible"}`}>
-                {feedback}
-            </div>
-            <fieldset>
-            <h2>New TrackIT Item</h2>
+        <main>
+            <form>
+                <div className={`${feedback.includes("Error") ? "error" : "feedback"} ${feedback === "" ? "invisible" : "visible"}`}>
+                    {feedback}
+                </div>
+                <fieldset>
+                    <h2>New Item</h2>
                     <label htmlFor="name">Name:</label>
                     <input
                         required autoFocus
@@ -86,11 +84,11 @@ export const CreateItem = () => {
                         onChange={updateItem}
                         autoComplete="off"
                     />
-            </fieldset>
-            <fieldset>
+                </fieldset>
+                <fieldset>
                     <label htmlFor="name">Reason:</label>
                     <input
-                        required autoFocus
+                        required
                         id="description"
                         type="text"
                         className="form-control"
@@ -99,16 +97,16 @@ export const CreateItem = () => {
                         onChange={updateItem}
                         autoComplete="off"
                     />
-            </fieldset>
-            <fieldset>
-                {<Categories setItem={setNewItem} item={newItem}
-                    setShowAddCategory={setShowAddCategoryOnNewItem}
-                    showAddCategory={showAddCategoryOnNewItem} />}
-            </fieldset>
-            <fieldset>
+                </fieldset>
+                <fieldset>
+                    {<Categories setItem={setNewItem} item={newItem}
+                        setShowAddCategory={setShowAddCategoryOnNewItem}
+                        showAddCategory={showAddCategoryOnNewItem} />}
+                </fieldset>
+                <fieldset>
                     <label htmlFor="description">Comment:</label>
                     <input
-                        required autoFocus
+                        required
                         type="text"
                         className="form-control"
                         placeholder="Enter a good comment to get you started."
@@ -121,23 +119,23 @@ export const CreateItem = () => {
                             setNewComment(copy)
                         }}
                     />
-            </fieldset>
-            <div className="bottom-Buttons">
-                <button
-                    onClick={(event) => {
-                        handleAddNewItem(event)
-                    }}>
-                    Create Item
-                </button>
-                <button
-                    onClick={(event) => {
-                        event.preventDefault()
-                        navigate("/homepage")
-                    }}>
-                    Cancel
-                </button>
-            </div>
-        </form>
+                </fieldset>
+                <div className="bottom-Buttons">
+                    <button
+                        onClick={(event) => {
+                            handleAddNewItem(event)
+                        }}>
+                        Create Item
+                    </button>
+                    <button
+                        onClick={(event) => {
+                            event.preventDefault()
+                            navigate("/homepage")
+                        }}>
+                        Cancel
+                    </button>
+                </div>
+            </form>
         </main>
     </>)
 }
