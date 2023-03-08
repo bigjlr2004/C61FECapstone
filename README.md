@@ -10,18 +10,15 @@ A React | JavaScript | CSS | HTML Project
 
 ## Application Overview
 
-#### Overview of Application: 
+#### Overview of TRackIT: 
 TrackIT is a personal productivity web application. TrackIT allows users to clearly define what they want to track, why they want to track it, and to add comments documenting their progress towards their goal
 
 
-#### Applications Target User: 
+#### TrackIT Target User: 
 The target user is anyone wanting to keep track of items in their lives.
 
 
-
 #### What can a user do with this application?
-
-
 
 TrackIT is a place for users to track progress in their daily life. The application will provide an easy to use interface for users to quickly add new items to track and to see what items they are currently tracking.
 
