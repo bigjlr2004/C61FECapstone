@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# TrackIT Personal Productivity Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React | JavaScript | CSS | HTML Project 
 
-## Available Scripts
+## Project Purpose
 
-In the project directory, you can run:
+1. Ever wish there was something in your life you could change? Maybe you want to lose weight, spend more time with your loved ones, start reading, or stop smoking. Whatever you want to change, the TrackIT app can help you to achieve it.
+2. People are more likely to Accomplish things in life  when they are clearly defined. TrackIT not only allows its users to define goals but the app provides an easy to use interface to track progress on these goals.
+3. When you have used TrackIT to clearly define what it is that you want to accomplish, and started tracking your progress towards achieving it in the TrackIT APP, there is nothing that will stand between you and your goals. 
 
-### `npm start`
+## Application Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### Overview of Application: 
+TrackIT is a personal productivity web application. TrackIT allows users to clearly define what they want to track, why they want to track it, and to add comments documenting their progress towards their goal
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+#### Applications Target User: 
+The target user is anyone wanting to keep track of items in their lives.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### What can a user do with this application?
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+TrackIT is a place for users to track progress in their daily life. The application will provide an easy to use interface for users to quickly add new items to track and to see what items they are currently tracking.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Features included in MVP Definition : 
+1. Users will be able to choose one or more items at a time to track
+2. Users will be able to add,edit, and delete their own items for tracking
+3. Users will be able to add comments to each item they are tracking.
+4. Users will be able to view past items they have tracked.
+5. Users will be able to Edit User Information.
+6. Users will be able to Edit or Delete Comments.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
